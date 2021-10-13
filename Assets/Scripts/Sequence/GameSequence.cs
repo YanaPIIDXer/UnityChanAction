@@ -22,6 +22,9 @@ namespace Sequence
         {
             LoadMasterData();
             mapLoad.Load(1).Forget();
+
+            // 試しにエネミーを置いてみる
+            Character.Enemy.Enemy.Spawn(EnemyMaster.Get(1), new Vector3(10.0f, 0.0f, 10.0f));
         }
 
         /// <summary>

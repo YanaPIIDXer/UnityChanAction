@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Master;
 using UnityEngine;
 
 namespace Character.Enemy
@@ -27,6 +28,25 @@ namespace Character.Enemy
     [RequireComponent(typeof(EnemyAnimation))]
     public class Enemy : MonoBehaviour, ICharacter, IEnemy
     {
+        /// <summary>
+        /// Prefabのルートパス
+        /// </summary>
+        private static readonly string PrefabRootPath = "Prefabs/Enemy/";
+
+        /// <summary>
+        /// 生成
+        /// </summary>
+        /// <param name="data">マスタデータ</param>
+        /// <param name="position">座標</param>
+        public static void Spawn(EnemyData data, Vector3 position)
+        {
+            // TODO:PrefabManagerみたいなのを作って管理できるようにする
+            GameObject prefab = Resources.Load<GameObject>(PrefabRootPath + data.PrefabName);
+            Debug.Assert(prefab != null, "EnemyPrefab:" + data.PrefabName + " is Invalid.");
+
+            Instantiate(prefab, position, Quaternion.identity);
+        }
+
         /// <summary>
         /// 移動Component
         /// </summary>
