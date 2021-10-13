@@ -12,7 +12,7 @@ namespace Master
         /// <summary>
         /// バイナリのパス
         /// </summary>
-        private static readonly string BinaryPath = "Master/Skill";
+        private static readonly string BinaryPath = "Master/SkillMaster";
 
         /// <summary>
         /// スキルデータを格納するDictionary
