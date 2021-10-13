@@ -21,6 +21,12 @@ namespace Character.Enemy
         }
 
         /// <summary>
+        /// ニュートラルステート再生中か？
+        /// </summary>
+        /// <returns></returns>
+        public bool IsNutralState => (animator.GetCurrentAnimatorStateInfo(0).IsName("Nutral") || animator.GetCurrentAnimatorStateInfo(0).IsName("Move"));
+
+        /// <summary>
         /// ダメージモーション再生
         /// </summary>
         public void PlayDamageMotion()

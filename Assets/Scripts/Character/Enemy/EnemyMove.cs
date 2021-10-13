@@ -26,6 +26,11 @@ namespace Character.Enemy
         private Vector3? force = null;
 
         /// <summary>
+        /// ステート制御
+        /// </summary>
+        private EnemyStateControl stateControl = null;
+
+        /// <summary>
         /// 力を加える
         /// </summary>
         /// <param name="force">加える力</param>
@@ -37,6 +42,7 @@ namespace Character.Enemy
         void Awake()
         {
             rigidBody = GetComponent<Rigidbody>();
+            stateControl = GetComponent<EnemyStateControl>();
         }
 
         void FixedUpdate()
@@ -46,6 +52,8 @@ namespace Character.Enemy
                 rigidBody.AddForce(force.Value, ForceMode.Force);
                 force = null;
             }
+
+            if (!stateControl.IsMovable) { return; }
 
             rigidBody.velocity = new Vector3(MoveVector.x, rigidBody.velocity.y, MoveVector.y);
             transform.LookAt(transform.position + new Vector3(MoveVector.x, 0.0f, MoveVector.y));

@@ -17,6 +17,11 @@ namespace Character.Enemy
         private EnemyState currentState = null;
 
         /// <summary>
+        /// 動けるか？
+        /// </summary>
+        public bool IsMovable => currentState.IsMovable;
+
+        /// <summary>
         /// 次のステートを設定
         /// </summary>
         /// <param name="nextState">次のステート</param>

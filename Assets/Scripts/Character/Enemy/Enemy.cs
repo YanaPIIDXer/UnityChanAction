@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Character.Enemy.State;
 using Collision;
 using Master;
 using UnityEngine;
@@ -108,8 +109,11 @@ namespace Character.Enemy
                 case ReactionType.Lift:
 
                     Move.AddForce(Vector3.up * collisionData.ReactionPower);
+                    Animation.PlayBlowMotion();
                     break;
             }
+
+            State.SetNextState(new EnemyStateDamageReaction(this));
         }
     }
 }
