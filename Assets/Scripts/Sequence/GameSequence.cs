@@ -35,6 +35,7 @@ namespace Sequence
             SkillMaster.Load();
             MapMaster.Load();
             EnemyMaster.Load();
+            CollisionMaster.Load();
         }
     }
 }
