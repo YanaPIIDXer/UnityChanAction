@@ -17,6 +17,11 @@ namespace Character.Player
         private int[] skillIds = new int[3] { 1, 4, 5 };
 
         /// <summary>
+        /// ステート管理
+        /// </summary>
+        private PlayerStateControl stateControl = null;
+
+        /// <summary>
         /// IPlayerControlインタフェースの注入
         /// </summary>
         /// <param name="playerControl">IPlayerControlインタフェース</param>
@@ -25,8 +30,13 @@ namespace Character.Player
         {
             playerControl.Skill.Subscribe(index =>
             {
-                Debug.Log("SkillID:" + skillIds[index]);
+                stateControl.UseSkill(index, skillIds[index]);
             }).AddTo(gameObject);
+        }
+
+        void Awake()
+        {
+            stateControl = GetComponent<PlayerStateControl>();
         }
     }
 }

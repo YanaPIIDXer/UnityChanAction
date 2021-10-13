@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Character.Player.State;
+using Master;
 
 namespace Character.Player
 {
@@ -27,6 +28,18 @@ namespace Character.Player
             }
             currentState = nextState;
             currentState.Begin();
+        }
+
+        /// <summary>
+        /// スキル使用
+        /// </summary>
+        /// <param name="keyIndex">キーのインデックス</param>
+        /// <param name="skillId">スキルＩＤ</param>
+        public void UseSkill(int keyIndex, int skillId)
+        {
+            if (!SkillMaster.IsValidSkill(skillId)) { return; }
+            if (!currentState.IsSkillUsable(keyIndex)) { return; }
+            currentState.UseSkill(skillId);
         }
 
         void Awake()

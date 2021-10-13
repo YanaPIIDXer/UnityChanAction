@@ -17,5 +17,15 @@ namespace Character.Player.State
             : base(playerFacade)
         {
         }
+
+        /// <summary>
+        /// スキルを使用可能か？
+        /// </summary>
+        /// <param name="keyIndex">キーのインデックス</param>
+        /// <returns>普通に使えるのでtrueしか返さない</returns>
+        public override bool IsSkillUsable(int keyIndex)
+        {
+            return true;
+        }
     }
 }

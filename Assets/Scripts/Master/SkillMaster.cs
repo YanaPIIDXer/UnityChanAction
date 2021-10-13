@@ -31,6 +31,16 @@ namespace Master
         }
 
         /// <summary>
+        /// 有効なスキルＩＤか？
+        /// </summary>
+        /// <param name="id">スキルＩＤ</param>
+        /// <returns>有効ならtrueを返す</returns>
+        public static bool IsValidSkill(int id)
+        {
+            return instance.dataDic.ContainsKey(id);
+        }
+
+        /// <summary>
         /// 読み込み
         /// </summary>
         public static void Load()

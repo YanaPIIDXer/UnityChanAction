@@ -24,6 +24,19 @@ namespace Character.Player.State
         }
 
         /// <summary>
+        /// スキルを使用可能か？
+        /// </summary>
+        /// <param name="keyIndex">キーのインデックス</param>
+        /// <returns>使用可能ならtrueを返す</returns>
+        public abstract bool IsSkillUsable(int keyIndex);
+
+        /// <summary>
+        /// スキルを使用する
+        /// </summary>
+        /// <param name="skillId">スキルＩＤ</param>
+        public virtual void UseSkill(int skillId) { }
+
+        /// <summary>
         /// 開始処理
         /// </summary>
         public virtual void Begin() { }
