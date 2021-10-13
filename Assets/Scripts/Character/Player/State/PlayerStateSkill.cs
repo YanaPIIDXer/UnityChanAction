@@ -22,6 +22,16 @@ namespace Character.Player.State
         private SkillData data = null;
 
         /// <summary>
+        /// 経過時間
+        /// </summary>
+        private float elapsedTime = 0.0f;
+
+        /// <summary>
+        /// リンクを受け付けたか？
+        /// </summary>
+        private bool bIsLinkAccepted = false;
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="playerFacade">各Componentへのアクセス用インタフェース</param>
@@ -39,7 +49,32 @@ namespace Character.Player.State
         /// </summary>
         public override void Begin()
         {
-            Debug.Log("Use Skill ID:" + data.Id);
+            // TODO:モーション再生
+        }
+
+        /// <summary>
+        /// 終了処理
+        /// </summary>
+        public override void Terminate()
+        {
+            // TODO:Nutralに戻す処理
+        }
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        public override void Update()
+        {
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime >= data.AcceptLinkTime && bIsLinkAccepted)
+            {
+                var nextData = SkillMaster.Get(data.LinkSkillId);
+                Player.State.SetNextState(new PlayerStateSkill(Player, keyIndex, nextData));
+            }
+            else if (elapsedTime >= data.PlayTime)
+            {
+                Player.State.SetNextState(new PlayerStateNutral(Player));
+            }
         }
 
         /// <summary>
@@ -49,7 +84,21 @@ namespace Character.Player.State
         /// <returns></returns>
         public override bool IsSkillUsable(int keyIndex)
         {
-            return (keyIndex == this.keyIndex);
+            if (keyIndex != this.keyIndex) { return false; }    // 違うスキルボタン
+            if (elapsedTime > data.AcceptLinkTime) { return false; }        // リンク受付時間を過ぎている（硬直中）
+            if (!SkillMaster.IsValidSkill(data.LinkSkillId)) { return false; }      // 有効なスキルではないのでリンクできない
+            return true;
+        }
+
+        /// <summary>
+        /// スキルを使用する
+        /// </summary>
+        /// <param name="keyIndex">キーインデックス</param>
+        /// <param name="skillId">スキルＩＤ</param>
+        public override void UseSkill(int keyIndex, int skillId)
+        {
+            // IsSkillUsableでリンク受付時間をチェックしているので、ここに来る＝リンクを受け付けるということ
+            bIsLinkAccepted = true;
         }
     }
 }
