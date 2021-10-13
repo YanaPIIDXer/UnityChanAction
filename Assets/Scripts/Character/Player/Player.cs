@@ -18,6 +18,11 @@ namespace Character.Player
         /// アニメーションComponent
         /// </summary>
         PlayerAnimation Animation { get; }
+
+        /// <summary>
+        /// ステート制御
+        /// </summary>
+        PlayerStateControl State { get; }
     }
 
     /// <summary>
@@ -25,6 +30,7 @@ namespace Character.Player
     /// </summary>
     [RequireComponent(typeof(PlayerMove))]
     [RequireComponent(typeof(PlayerAnimation))]
+    [RequireComponent(typeof(PlayerStateControl))]
     public class Player : MonoBehaviour, ICharacter, IPlayerFacade
     {
         /// <summary>
@@ -38,10 +44,16 @@ namespace Character.Player
         /// <returns></returns>
         public PlayerAnimation Animation { get; private set; }
 
+        /// <summary>
+        /// ステート制御
+        /// </summary>
+        public PlayerStateControl State { get; private set; }
+
         void Awake()
         {
             Move = GetComponent<PlayerMove>();
             Animation = GetComponent<PlayerAnimation>();
+            State = GetComponent<PlayerStateControl>();
         }
     }
 }
