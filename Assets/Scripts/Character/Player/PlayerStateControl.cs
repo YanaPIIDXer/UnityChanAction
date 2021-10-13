@@ -39,7 +39,7 @@ namespace Character.Player
         {
             if (!SkillMaster.IsValidSkill(skillId)) { return; }
             if (!currentState.IsSkillUsable(keyIndex)) { return; }
-            currentState.UseSkill(skillId);
+            currentState.UseSkill(keyIndex, skillId);
         }
 
         void Awake()

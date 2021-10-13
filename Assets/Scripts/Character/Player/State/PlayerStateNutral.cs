@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Master;
 
 namespace Character.Player.State
 {
@@ -26,6 +27,17 @@ namespace Character.Player.State
         public override bool IsSkillUsable(int keyIndex)
         {
             return true;
+        }
+
+        /// <summary>
+        /// スキルを使用する
+        /// </summary>
+        /// <param name="keyIndex">キーインデックス</param>
+        /// <param name="skillId">スキルＩＤ</param>
+        public override void UseSkill(int keyIndex, int skillId)
+        {
+            var skillData = SkillMaster.Get(skillId);
+            Player.State.SetNextState(new PlayerStateSkill(Player, keyIndex, skillData));
         }
     }
 }

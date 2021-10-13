@@ -33,8 +33,9 @@ namespace Character.Player.State
         /// <summary>
         /// スキルを使用する
         /// </summary>
+        /// <param name="keyIndex">キーのインデックス</param>
         /// <param name="skillId">スキルＩＤ</param>
-        public virtual void UseSkill(int skillId) { }
+        public virtual void UseSkill(int keyIndex, int skillId) { }
 
         /// <summary>
         /// 開始処理
