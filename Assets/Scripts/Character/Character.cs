@@ -24,6 +24,7 @@ namespace Character
         /// ダメージを受けた
         /// </summary>
         /// <param name="collisionData">コリジョンデータ</param>
-        void OnDamaged(CollisionData collisionData);
+        /// <param name="blowVector">「吹き飛び」の場合の吹き飛びベクトル</param>
+        void OnDamaged(CollisionData collisionData, Vector3 blowVector);
     }
 }

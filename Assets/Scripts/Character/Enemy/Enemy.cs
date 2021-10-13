@@ -91,7 +91,8 @@ namespace Character.Enemy
         /// ダメージを受けた
         /// </summary>
         /// <param name="collisionData">コリジョンデータ</param>
-        public void OnDamaged(CollisionData collisionData)
+        /// <param name="blowVector">「吹き飛び」の場合の吹き飛びベクトル</param>
+        public void OnDamaged(CollisionData collisionData, Vector3 blowVector)
         {
             switch (collisionData.ReactionType)
             {
@@ -102,7 +103,7 @@ namespace Character.Enemy
 
                 case ReactionType.Blow:
 
-                    Move.AddForce(-transform.forward * collisionData.ReactionPower);
+                    Move.AddForce(blowVector * collisionData.ReactionPower);
                     Animation.PlayBlowMotion();
                     break;
 
