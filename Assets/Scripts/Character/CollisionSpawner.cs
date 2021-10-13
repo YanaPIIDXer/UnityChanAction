@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Master;
+using Collision;
 
 namespace Character
 {
@@ -21,6 +22,11 @@ namespace Character
         private float elapsedTime = 0.0f;
 
         /// <summary>
+        /// 所有者
+        /// </summary>
+        private ICharacter owner = null;
+
+        /// <summary>
         /// スキル開始時に呼び出す
         /// </summary>
         /// <param name="skillId">スキルＩＤ</param>
@@ -28,6 +34,11 @@ namespace Character
         {
             dataList = CollisionMaster.Collect(skillId);
             elapsedTime = 0.0f;
+        }
+
+        void Awake()
+        {
+            owner = GetComponent<ICharacter>();
         }
 
         void Update()
@@ -40,7 +51,7 @@ namespace Character
             {
                 if (elapsedTime >= dataList[i].SpawnTime)
                 {
-                    Debug.Log("TODO:コリジョン生成処理");
+                    AttackCollision.Spawn(owner, dataList[i]);
                     dataList.RemoveAt(i);
                 }
             }

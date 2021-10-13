@@ -57,6 +57,16 @@ namespace Character.Enemy
         /// </summary>
         public EnemyAnimation Animation { get; private set; }
 
+        /// <summary>
+        /// 座標
+        /// </summary>
+        public Vector3 Position => transform.position;
+
+        /// <summary>
+        /// 回転
+        /// </summary>
+        public Quaternion Rotation => transform.rotation;
+
         void Awake()
         {
             Move = GetComponent<EnemyMove>();
