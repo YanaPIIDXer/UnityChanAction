@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Map;
 using UnityEngine;
+using Zenject;
+using UniRx;
 
 namespace Character.Player
 {
@@ -67,5 +70,20 @@ namespace Character.Player
             State = GetComponent<PlayerStateControl>();
             Skill = GetComponent<PlayerSkill>();
         }
+
+        /// <summary>
+        /// マップ読み込みインタフェースの注入
+        /// </summary>
+        /// <param name="mapLoad">マップ読み込みインタフェース</param>
+        [Inject]
+        public void InjectMapLoad(IMapLoad mapLoad)
+        {
+            mapLoad.OnLoad.Subscribe(data =>
+            {
+                transform.position = new Vector3(data.StartX, data.StartY, data.StartZ);
+                transform.eulerAngles = new Vector3(0.0f, data.StartRotation, 0.0f);
+            }).AddTo(gameObject);
+        }
+
     }
 }
