@@ -13,12 +13,18 @@ namespace Character.Enemy
         /// 移動Component
         /// </summary>
         EnemyMove Move { get; }
+
+        /// <summary>
+        /// アニメーションComponent
+        /// </summary>
+        EnemyAnimation Animation { get; }
     }
 
     /// <summary>
     /// エネミークラス
     /// </summary>
     [RequireComponent(typeof(EnemyMove))]
+    [RequireComponent(typeof(EnemyAnimation))]
     public class Enemy : MonoBehaviour, ICharacter, IEnemy
     {
         /// <summary>
@@ -26,9 +32,15 @@ namespace Character.Enemy
         /// </summary>
         public EnemyMove Move { get; private set; }
 
+        /// <summary>
+        /// アニメーションComponent
+        /// </summary>
+        public EnemyAnimation Animation { get; private set; }
+
         void Awake()
         {
             Move = GetComponent<EnemyMove>();
+            Animation = GetComponent<EnemyAnimation>();
         }
     }
 }
