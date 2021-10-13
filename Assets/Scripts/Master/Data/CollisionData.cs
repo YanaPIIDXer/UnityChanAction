@@ -11,6 +11,9 @@ namespace Master
 		public int Power { get; private set; }
 		public int ReactionType { get; private set; }
 		public float ReactionPower { get; private set; }
+		public float OffsetX { get; private set; }
+		public float OffsetY { get; private set; }
+		public float OffsetZ { get; private set; }
 
 		public void Serialize(IMemoryStream stream)
 		{
@@ -35,6 +38,15 @@ namespace Master
 			float ReactionPower = new float();
 			stream.Serialize(ref ReactionPower);
 			this.ReactionPower = ReactionPower;
+			float OffsetX = new float();
+			stream.Serialize(ref OffsetX);
+			this.OffsetX = OffsetX;
+			float OffsetY = new float();
+			stream.Serialize(ref OffsetY);
+			this.OffsetY = OffsetY;
+			float OffsetZ = new float();
+			stream.Serialize(ref OffsetZ);
+			this.OffsetZ = OffsetZ;
 		}
 
 		public static CollisionData[] SerializeAll(byte[] buffer)
