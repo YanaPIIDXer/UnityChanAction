@@ -48,5 +48,9 @@ namespace Character.Player
         {
             animator = GetComponent<Animator>();
         }
+
+        #region 導入したAssetにイベントが仕込まれているようで、それを握り潰すための定義
+        public void SendEvent() { }
+        #endregion
     }
 }
