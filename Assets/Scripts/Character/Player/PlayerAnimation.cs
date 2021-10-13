@@ -27,6 +27,23 @@ namespace Character.Player
             playerControl.Move.Select(v => v.sqrMagnitude > 0.0f).Subscribe(bIsMove => animator.SetBool("IsMoving", bIsMove)).AddTo(gameObject);
         }
 
+        /// <summary>
+        /// スキルモーション再生
+        /// </summary>
+        /// <param name="motionName">モーション名</param>
+        public void PlaySkilMotion(string motionName)
+        {
+            animator.Play(motionName, 0);
+        }
+
+        /// <summary>
+        /// ニュートラルモーション再生
+        /// </summary>
+        public void PlayNutralMotion()
+        {
+            animator.Play("Nutral", 0);
+        }
+
         void Awake()
         {
             animator = GetComponent<Animator>();

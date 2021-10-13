@@ -49,7 +49,7 @@ namespace Character.Player.State
         /// </summary>
         public override void Begin()
         {
-            // TODO:モーション再生
+            Player.Animation.PlaySkilMotion(data.MotionName);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Character.Player.State
         /// </summary>
         public override void Terminate()
         {
-            // TODO:Nutralに戻す処理
+            Player.Animation.PlayNutralMotion();
         }
 
         /// <summary>
