@@ -50,7 +50,7 @@ namespace Character.Player.State
         public override void Begin()
         {
             Player.Move.IsMovable = false;
-            Player.Animation.PlaySkilMotion(data.MotionName);
+            Player.Animation.PlaySkilMotion(data.MotionName, data.MotionSpeed);
         }
 
         /// <summary>

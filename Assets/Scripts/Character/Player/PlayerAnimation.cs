@@ -31,9 +31,11 @@ namespace Character.Player
         /// スキルモーション再生
         /// </summary>
         /// <param name="motionName">モーション名</param>
-        public void PlaySkilMotion(string motionName)
+        /// <param name="playSpeed">再生速度</param>
+        public void PlaySkilMotion(string motionName, float playSpeed)
         {
             animator.Play(motionName, 0);
+            animator.speed = playSpeed;
         }
 
         /// <summary>
@@ -42,6 +44,7 @@ namespace Character.Player
         public void PlayNutralMotion()
         {
             animator.Play("Nutral", 0);
+            animator.speed = 1.0f;
         }
 
         void Awake()

@@ -6,6 +6,7 @@ namespace Master
 	{
 		public int Id { get; private set; }
 		public string MotionName { get; private set; }
+		public float MotionSpeed { get; private set; }
 		public float PlayTime { get; private set; }
 		public float AcceptLinkTime { get; private set; }
 		public int LinkSkillId { get; private set; }
@@ -18,6 +19,9 @@ namespace Master
 			string MotionName = "";
 			stream.Serialize(ref MotionName);
 			this.MotionName = MotionName;
+			float MotionSpeed = new float();
+			stream.Serialize(ref MotionSpeed);
+			this.MotionSpeed = MotionSpeed;
 			float PlayTime = new float();
 			stream.Serialize(ref PlayTime);
 			this.PlayTime = PlayTime;
