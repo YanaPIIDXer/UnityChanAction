@@ -23,6 +23,12 @@ namespace Map
         /// 読み込み完了
         /// </summary>
         IObservable<MapData> OnLoad { get; }
+
+        /// <summary>
+        /// 読み込み処理
+        /// </summary>
+        /// <param name="mapId">マップID</param>
+        UniTaskVoid Load(int mapId);
     }
 
     /// <summary>

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Master;
+using Map;
+using Zenject;
 
 namespace Sequence
 {
@@ -10,9 +12,16 @@ namespace Sequence
     /// </summary>
     public class GameSequence : MonoBehaviour
     {
+        /// <summary>
+        /// マップロードインタフェース
+        /// </summary>
+        [Inject]
+        private IMapLoad mapLoad = null;
+
         void Awake()
         {
             LoadMasterData();
+            mapLoad.Load(1).Forget();
         }
 
         /// <summary>
