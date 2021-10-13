@@ -51,6 +51,7 @@ namespace Character.Player.State
         {
             Player.Move.IsMovable = false;
             Player.Animation.PlaySkilMotion(data.MotionName, data.MotionSpeed);
+            Player.CollisionSpawn.OnStartSkill(data.Id);
         }
 
         /// <summary>

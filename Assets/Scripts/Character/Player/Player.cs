@@ -31,6 +31,11 @@ namespace Character.Player
         /// スキル
         /// </summary>
         PlayerSkill Skill { get; }
+
+        /// <summary>
+        /// コリジョン生成
+        /// </summary>
+        CollisionSpawner CollisionSpawn { get; }
     }
 
     /// <summary>
@@ -40,6 +45,7 @@ namespace Character.Player
     [RequireComponent(typeof(PlayerAnimation))]
     [RequireComponent(typeof(PlayerStateControl))]
     [RequireComponent(typeof(PlayerSkill))]
+    [RequireComponent(typeof(CollisionSpawner))]
     public class Player : MonoBehaviour, ICharacter, IPlayer
     {
         /// <summary>
@@ -63,12 +69,18 @@ namespace Character.Player
         /// </summary>
         public PlayerSkill Skill { get; private set; }
 
+        /// <summary>
+        /// コリジョン生成
+        /// </summary>
+        public CollisionSpawner CollisionSpawn { get; private set; }
+
         void Awake()
         {
             Move = GetComponent<PlayerMove>();
             Animation = GetComponent<PlayerAnimation>();
             State = GetComponent<PlayerStateControl>();
             Skill = GetComponent<PlayerSkill>();
+            CollisionSpawn = GetComponent<CollisionSpawner>();
         }
 
         /// <summary>

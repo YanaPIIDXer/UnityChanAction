@@ -13,7 +13,7 @@ namespace Character
         /// <summary>
         /// データリスト
         /// </summary>
-        private List<CollisionData> dataList = null;
+        private List<CollisionData> dataList = new List<CollisionData>();
 
         /// <summary>
         /// 経過時間
@@ -32,6 +32,8 @@ namespace Character
 
         void Update()
         {
+            if (dataList.Count == 0) { return; }
+
             elapsedTime += Time.deltaTime;
 
             for (int i = dataList.Count - 1; i >= 0; i--)
