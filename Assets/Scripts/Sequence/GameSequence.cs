@@ -21,6 +21,7 @@ namespace Sequence
         private void LoadMasterData()
         {
             SkillMaster.Load();
+            MapMaster.Load();
         }
     }
 }
