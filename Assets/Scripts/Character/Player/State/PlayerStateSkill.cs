@@ -49,7 +49,6 @@ namespace Character.Player.State
         /// </summary>
         public override void Begin()
         {
-            Player.Move.IsMovable = false;
             Player.Animation.PlaySkilMotion(data.MotionName, data.MotionSpeed);
             Player.CollisionSpawn.OnStartSkill(data.Id);
         }
@@ -59,7 +58,6 @@ namespace Character.Player.State
         /// </summary>
         public override void Terminate()
         {
-            Player.Move.IsMovable = true;
             Player.Animation.PlayNutralMotion();
         }
 

@@ -19,15 +19,14 @@ namespace Character.Player
         private Rigidbody rigidBody = null;
 
         /// <summary>
+        /// ステート管理
+        /// </summary>
+        private PlayerStateControl stateControl = null;
+
+        /// <summary>
         /// 移動ベクトル
         /// </summary>
         private Vector2 moveVector = Vector2.zero;
-
-        /// <summary>
-        /// 移動可能？
-        /// </summary>
-        /// <value></value>
-        public bool IsMovable { get; set; } = true;
 
         /// <summary>
         /// 停止中か？
@@ -58,11 +57,12 @@ namespace Character.Player
         void Awake()
         {
             rigidBody = GetComponent<Rigidbody>();
+            stateControl = GetComponent<PlayerStateControl>();
         }
 
         void FixedUpdate()
         {
-            if (!IsMovable) { return; }
+            if (!stateControl.IsMovable) { return; }
 
             if (bIsFreeze)
             {

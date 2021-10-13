@@ -20,6 +20,11 @@ namespace Character.Player.State
         }
 
         /// <summary>
+        /// 移動可能か？
+        /// </summary>
+        public override bool IsMovable => true;
+
+        /// <summary>
         /// スキルを使用可能か？
         /// </summary>
         /// <param name="keyIndex">キーのインデックス</param>

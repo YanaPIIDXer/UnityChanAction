@@ -31,6 +31,11 @@ namespace Character.Player
         }
 
         /// <summary>
+        /// 移動可能か？
+        /// </summary>
+        public bool IsMovable => currentState.IsMovable;
+
+        /// <summary>
         /// スキル使用
         /// </summary>
         /// <param name="keyIndex">キーのインデックス</param>
