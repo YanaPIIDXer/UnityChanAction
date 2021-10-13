@@ -32,5 +32,10 @@ namespace Character.Player.State
         /// 更新
         /// </summary>
         public virtual void Update() { }
+
+        /// <summary>
+        /// 終了処理
+        /// </summary>
+        public virtual void Terminate() { }
     }
 }

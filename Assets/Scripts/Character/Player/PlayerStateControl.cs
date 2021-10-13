@@ -21,6 +21,10 @@ namespace Character.Player
         /// <param name="nextState">次のState</param>
         public void SetNextState(PlayerState nextState)
         {
+            if (currentState != null)
+            {
+                currentState.Terminate();
+            }
             currentState = nextState;
             currentState.Begin();
         }
