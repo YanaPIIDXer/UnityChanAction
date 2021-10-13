@@ -61,3 +61,4 @@ crashlytics-build.properties
 Assets/ExternalAssets/
 
 application/public/unitybuild/
+/application/firebase-debug.log
