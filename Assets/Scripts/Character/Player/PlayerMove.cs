@@ -23,6 +23,12 @@ namespace Character.Player
         private Vector2 moveVector = Vector2.zero;
 
         /// <summary>
+        /// 移動可能？
+        /// </summary>
+        /// <value></value>
+        public bool IsMovable { get; set; } = true;
+
+        /// <summary>
         /// IPlayerControlインタフェースの注入
         /// </summary>
         /// <param name="playerControl">IPlayerControlインタフェース</param>
@@ -39,6 +45,7 @@ namespace Character.Player
 
         void FixedUpdate()
         {
+            if (!IsMovable) { return; }
             rigidBody.velocity = new Vector3(moveVector.x, rigidBody.velocity.y, moveVector.y);
             transform.LookAt(transform.position + new Vector3(moveVector.x, 0.0f, moveVector.y));
         }

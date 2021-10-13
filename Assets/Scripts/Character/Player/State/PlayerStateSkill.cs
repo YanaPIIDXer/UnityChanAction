@@ -49,6 +49,7 @@ namespace Character.Player.State
         /// </summary>
         public override void Begin()
         {
+            Player.Move.IsMovable = false;
             Player.Animation.PlaySkilMotion(data.MotionName);
         }
 
@@ -57,6 +58,7 @@ namespace Character.Player.State
         /// </summary>
         public override void Terminate()
         {
+            Player.Move.IsMovable = true;
             Player.Animation.PlayNutralMotion();
         }
 
