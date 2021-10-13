@@ -16,7 +16,7 @@ namespace ControlInput
         /// <summary>
         /// 移動
         /// </summary>
-        public IObservable<Vector2> Move => onUpdate.Select(_ => new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
+        public IObservable<Vector2> Move => onUpdate.Select(_ => new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized);
 
         /// <summary>
         /// スキル
