@@ -5,6 +5,7 @@ namespace Master
 	public class MapData
 	{
 		public int Id { get; private set; }
+		public string MapName { get; private set; }
 		public string FileName { get; private set; }
 		public float StartX { get; private set; }
 		public float StartY { get; private set; }
@@ -16,6 +17,9 @@ namespace Master
 			int Id = new int();
 			stream.Serialize(ref Id);
 			this.Id = Id;
+			string MapName = "";
+			stream.Serialize(ref MapName);
+			this.MapName = MapName;
 			string FileName = "";
 			stream.Serialize(ref FileName);
 			this.FileName = FileName;
