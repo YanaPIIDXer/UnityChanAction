@@ -62,3 +62,4 @@ Assets/ExternalAssets/
 
 application/public/unitybuild/
 /application/firebase-debug.log
+/application/.firebase
