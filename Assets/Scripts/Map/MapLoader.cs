@@ -65,12 +65,12 @@ namespace Map
             MapData data = MapMaster.Get(mapId);
             Debug.Assert(data != null, "Invalid MapID:" + mapId);
 
+            beginLoadSubject.OnNext(Unit.Default);
             if (currentFileName != "")
             {
                 await SceneManager.UnloadSceneAsync(currentFileName);
             }
 
-            beginLoadSubject.OnNext(Unit.Default);
             await SceneManager.LoadSceneAsync(data.FileName, LoadSceneMode.Additive);
             onLoadSubject.OnNext(data);
             currentFileName = data.FileName;
