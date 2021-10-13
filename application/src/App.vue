@@ -9,9 +9,20 @@
                         module: { TOTAL_STACK: 6 * 1024 * 1024 },
                 }" />
     <h2>操作方法</h2>
-    <table border="1">
-      <td>上下左右、WSAD</td><td>移動</td>
-      <td>Zキー、Xキー、Cキー</td>><td>攻撃（Zキーの攻撃は３段目まで）</td>
+    <table border="1" align="center">
+      <thead>
+        <tr>
+          <th>キー</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>上下左右、WSAD</td><td>移動</td>
+        </tr>
+        <tr>
+          <td>Zキー、Xキー、Cキー</td><td>攻撃（Zキーの攻撃は３段目まで）</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -35,5 +46,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.webgl-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, 0%);
 }
 </style>
