@@ -12,13 +12,13 @@ namespace Character.Player.State
         /// <summary>
         /// 各Componentへのアクセス用インタフェース
         /// </summary>
-        protected IPlayerFacade Player { get; private set; }
+        protected IPlayer Player { get; private set; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="playerFacade">各Componentへのアクセス用インタフェース</param>
-        public PlayerState(IPlayerFacade playerFacade)
+        public PlayerState(IPlayer playerFacade)
         {
             Player = playerFacade;
         }

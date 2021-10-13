@@ -10,7 +10,7 @@ namespace Character.Player
     /// <summary>
     /// プレイヤーの各Componentにアクセスするためのインタフェース
     /// </summary>
-    public interface IPlayerFacade
+    public interface IPlayer
     {
         /// <summary>
         /// 移動Component
@@ -40,7 +40,7 @@ namespace Character.Player
     [RequireComponent(typeof(PlayerAnimation))]
     [RequireComponent(typeof(PlayerStateControl))]
     [RequireComponent(typeof(PlayerSkill))]
-    public class Player : MonoBehaviour, ICharacter, IPlayerFacade
+    public class Player : MonoBehaviour, ICharacter, IPlayer
     {
         /// <summary>
         /// 移動Component

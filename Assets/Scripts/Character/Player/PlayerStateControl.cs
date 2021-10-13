@@ -44,7 +44,7 @@ namespace Character.Player
 
         void Awake()
         {
-            SetNextState(new PlayerStateNutral(GetComponent<IPlayerFacade>()));
+            SetNextState(new PlayerStateNutral(GetComponent<IPlayer>()));
         }
 
         void Update()

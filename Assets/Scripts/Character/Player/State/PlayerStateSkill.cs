@@ -37,7 +37,7 @@ namespace Character.Player.State
         /// <param name="playerFacade">各Componentへのアクセス用インタフェース</param>
         /// <param name="keyIndex">キーインデックス</param>
         /// <param name="data">スキルデータ</param>
-        public PlayerStateSkill(IPlayerFacade playerFacade, int keyIndex, SkillData data)
+        public PlayerStateSkill(IPlayer playerFacade, int keyIndex, SkillData data)
             : base(playerFacade)
         {
             this.keyIndex = keyIndex;

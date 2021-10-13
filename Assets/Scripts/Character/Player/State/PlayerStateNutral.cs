@@ -14,7 +14,7 @@ namespace Character.Player.State
         /// コンストラクタ
         /// </summary>
         /// <param name="playerFacade">各Componentへのアクセス用インタフェース</param>
-        public PlayerStateNutral(IPlayerFacade playerFacade)
+        public PlayerStateNutral(IPlayer playerFacade)
             : base(playerFacade)
         {
         }
