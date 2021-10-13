@@ -19,7 +19,7 @@ namespace CameraControl
         /// <summary>
         /// 視点の高さオフセット
         /// </summary>
-        private static readonly float HeightOffset = 1.8f;
+        private static readonly float HeightOffset = 1.5f;
 
         /// <summary>
         /// プレイヤーからの距離
