@@ -51,6 +51,11 @@ namespace Map
         private Subject<MapData> onLoadSubject = new Subject<MapData>();
 
         /// <summary>
+        /// 現在読み込まれているファイル名
+        /// </summary>
+        private string currentFileName = "";
+
+        /// <summary>
         /// 読み込み
         /// </summary>
         /// <param name="mapId">マップＩＤ</param>
@@ -60,9 +65,15 @@ namespace Map
             MapData data = MapMaster.Get(mapId);
             Debug.Assert(data != null, "Invalid MapID:" + mapId);
 
+            if (currentFileName != "")
+            {
+                await SceneManager.UnloadSceneAsync(currentFileName);
+            }
+
             beginLoadSubject.OnNext(Unit.Default);
             await SceneManager.LoadSceneAsync(data.FileName, LoadSceneMode.Additive);
             onLoadSubject.OnNext(data);
+            currentFileName = data.FileName;
         }
     }
 }
