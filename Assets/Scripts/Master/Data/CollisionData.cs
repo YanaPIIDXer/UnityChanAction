@@ -9,7 +9,7 @@ namespace Master
 		public float LifeTime { get; private set; }
 		public float Radius { get; private set; }
 		public int Power { get; private set; }
-		public int ReactionType { get; private set; }
+		public byte ReactionType { get; private set; }
 		public float ReactionPower { get; private set; }
 		public float OffsetX { get; private set; }
 		public float OffsetY { get; private set; }
@@ -32,7 +32,7 @@ namespace Master
 			int Power = new int();
 			stream.Serialize(ref Power);
 			this.Power = Power;
-			int ReactionType = new int();
+			byte ReactionType = new byte();
 			stream.Serialize(ref ReactionType);
 			this.ReactionType = ReactionType;
 			float ReactionPower = new float();
