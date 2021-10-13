@@ -92,13 +92,23 @@ namespace Character.Enemy
         /// <param name="collisionData">コリジョンデータ</param>
         public void OnDamaged(CollisionData collisionData)
         {
-            if (collisionData.ReactionType == ReactionType.None)
+            switch (collisionData.ReactionType)
             {
-                Animation.PlayDamageMotion();
-            }
-            else
-            {
-                State.OnDamaged(collisionData);
+                case ReactionType.None:
+
+                    Animation.PlayDamageMotion();
+                    break;
+
+                case ReactionType.Blow:
+
+                    Move.AddForce(-transform.forward * collisionData.ReactionPower);
+                    Animation.PlayBlowMotion();
+                    break;
+
+                case ReactionType.Lift:
+
+                    Move.AddForce(Vector3.up * collisionData.ReactionPower);
+                    break;
             }
         }
     }

@@ -30,14 +30,6 @@ namespace Character.Enemy
             currentState.Begin();
         }
 
-        /// <summary>
-        /// ダメージを受けた
-        /// </summary>
-        /// <param name="collisionData">コリジョンデータ</param>
-        public void OnDamaged(CollisionData collisionData)
-        {
-        }
-
         void Awake()
         {
             SetNextState(new EnemyStateNutral(GetComponent<IEnemy>()));

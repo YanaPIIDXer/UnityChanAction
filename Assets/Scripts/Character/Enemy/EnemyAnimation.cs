@@ -27,5 +27,13 @@ namespace Character.Enemy
         {
             animator.Play("Sword1h_Hit_Head_Front", 0);
         }
+
+        /// <summary>
+        /// 吹っ飛びモーション再生
+        /// </summary>
+        public void PlayBlowMotion()
+        {
+            animator.Play("Sword1h_Knockdown_Front", 0);
+        }
     }
 }
