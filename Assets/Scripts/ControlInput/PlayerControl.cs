@@ -5,6 +5,8 @@ using Character.Player;
 using UniRx;
 using System;
 using UniRx.Triggers;
+using Zenject;
+using Map;
 
 namespace ControlInput
 {
@@ -30,9 +32,25 @@ namespace ControlInput
         }).Where(index => index != -1);
 
         /// <summary>
+        /// 有効か？
+        /// </summary>
+        private bool bIsEnable = true;
+
+        /// <summary>
+        /// マップ読み込みインタフェースの注入
+        /// </summary>
+        /// <param name="mapLoad">マップ読み込みインタフェース</param>
+        [Inject]
+        public void InjectMapLoad(IMapLoad mapLoad)
+        {
+            mapLoad.BeginLoad.Subscribe(_ => bIsEnable = false).AddTo(gameObject);
+            mapLoad.OnLoad.Subscribe(_ => bIsEnable = true).AddTo(gameObject);
+        }
+
+        /// <summary>
         /// UpdateAsObservableをラップするObservable
         /// プレイヤーを操作したくないタイミングでの入力を抑制するためのもの
         /// </summary>
-        private IObservable<Unit> onUpdate => this.UpdateAsObservable();
+        private IObservable<Unit> onUpdate => this.UpdateAsObservable().Where(_ => bIsEnable);
     }
 }
