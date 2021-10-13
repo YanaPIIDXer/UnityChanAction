@@ -19,6 +19,11 @@ namespace Character.Enemy
         /// アニメーションComponent
         /// </summary>
         EnemyAnimation Animation { get; }
+
+        /// <summary>
+        /// ステート制御
+        /// </summary>
+        EnemyStateControl State { get; }
     }
 
     /// <summary>
@@ -26,6 +31,7 @@ namespace Character.Enemy
     /// </summary>
     [RequireComponent(typeof(EnemyMove))]
     [RequireComponent(typeof(EnemyAnimation))]
+    [RequireComponent(typeof(EnemyStateControl))]
     public class Enemy : MonoBehaviour, ICharacter, IEnemy
     {
         /// <summary>
@@ -58,6 +64,11 @@ namespace Character.Enemy
         public EnemyAnimation Animation { get; private set; }
 
         /// <summary>
+        /// ステート制御
+        /// </summary>
+        public EnemyStateControl State { get; private set; }
+
+        /// <summary>
         /// 座標
         /// </summary>
         public Vector3 Position => transform.position;
@@ -71,6 +82,7 @@ namespace Character.Enemy
         {
             Move = GetComponent<EnemyMove>();
             Animation = GetComponent<EnemyAnimation>();
+            State = GetComponent<EnemyStateControl>();
         }
     }
 }
