@@ -14,7 +14,7 @@ namespace Character.Player
         /// <summary>
         /// 移動
         /// </summary>
-        IObservable<Unit> Move { get; }
+        IObservable<Vector2> Move { get; }
 
         /// <summary>
         /// スキル
