@@ -23,6 +23,11 @@ namespace Character.Player
         /// ステート制御
         /// </summary>
         PlayerStateControl State { get; }
+
+        /// <summary>
+        /// スキル
+        /// </summary>
+        PlayerSkill Skill { get; }
     }
 
     /// <summary>
@@ -31,6 +36,7 @@ namespace Character.Player
     [RequireComponent(typeof(PlayerMove))]
     [RequireComponent(typeof(PlayerAnimation))]
     [RequireComponent(typeof(PlayerStateControl))]
+    [RequireComponent(typeof(PlayerSkill))]
     public class Player : MonoBehaviour, ICharacter, IPlayerFacade
     {
         /// <summary>
@@ -49,11 +55,17 @@ namespace Character.Player
         /// </summary>
         public PlayerStateControl State { get; private set; }
 
+        /// <summary>
+        /// スキル
+        /// </summary>
+        public PlayerSkill Skill { get; private set; }
+
         void Awake()
         {
             Move = GetComponent<PlayerMove>();
             Animation = GetComponent<PlayerAnimation>();
             State = GetComponent<PlayerStateControl>();
+            Skill = GetComponent<PlayerSkill>();
         }
     }
 }
