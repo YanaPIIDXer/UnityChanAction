@@ -12,16 +12,16 @@ namespace Collision
         /// <summary>
         /// 何も無し
         /// </summary>
-        public static readonly byte None = 0;
+        public const byte None = 0;
 
         /// <summary>
         /// 吹っ飛び
         /// </summary>
-        public static readonly byte Blow = 1;
+        public const byte Blow = 1;
 
         /// <summary>
         /// 打ち上げ
         /// </summary>
-        public static readonly byte Lift = 2;
+        public const byte Lift = 2;
     }
 }

@@ -19,5 +19,13 @@ namespace Character.Enemy
         {
             animator = GetComponent<Animator>();
         }
+
+        /// <summary>
+        /// ダメージモーション再生
+        /// </summary>
+        public void PlayDamageMotion()
+        {
+            animator.Play("Sword1h_Hit_Head_Front", 0);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Master;
 using UnityEngine;
 
 namespace Character
@@ -18,5 +19,11 @@ namespace Character
         /// 回転
         /// </summary>
         Quaternion Rotation { get; }
+
+        /// <summary>
+        /// ダメージを受けた
+        /// </summary>
+        /// <param name="collisionData">コリジョンデータ</param>
+        void OnDamaged(CollisionData collisionData);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Character.Enemy.State;
+using Master;
 
 namespace Character.Enemy
 {
@@ -27,6 +28,14 @@ namespace Character.Enemy
             }
             currentState = nextState;
             currentState.Begin();
+        }
+
+        /// <summary>
+        /// ダメージを受けた
+        /// </summary>
+        /// <param name="collisionData">コリジョンデータ</param>
+        public void OnDamaged(CollisionData collisionData)
+        {
         }
 
         void Awake()

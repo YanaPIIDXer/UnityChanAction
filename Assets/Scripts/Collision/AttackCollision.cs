@@ -67,7 +67,7 @@ namespace Collision
         {
             var hitCharacter = collision.gameObject.GetComponent<ICharacter>();
             if (hitCharacter == null || hitCharacter == owner) { return; }
-            Debug.Log("TODO:ヒット処理の実装");
+            hitCharacter.OnDamaged(data);
         }
     }
 }

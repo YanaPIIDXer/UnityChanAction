@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Collision;
 using Master;
 using UnityEngine;
 
@@ -83,6 +84,22 @@ namespace Character.Enemy
             Move = GetComponent<EnemyMove>();
             Animation = GetComponent<EnemyAnimation>();
             State = GetComponent<EnemyStateControl>();
+        }
+
+        /// <summary>
+        /// ダメージを受けた
+        /// </summary>
+        /// <param name="collisionData">コリジョンデータ</param>
+        public void OnDamaged(CollisionData collisionData)
+        {
+            if (collisionData.ReactionType == ReactionType.None)
+            {
+                Animation.PlayDamageMotion();
+            }
+            else
+            {
+                State.OnDamaged(collisionData);
+            }
         }
     }
 }

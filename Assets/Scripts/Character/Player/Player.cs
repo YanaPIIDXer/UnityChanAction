@@ -4,6 +4,7 @@ using Map;
 using UnityEngine;
 using Zenject;
 using UniRx;
+using Master;
 
 namespace Character.Player
 {
@@ -107,5 +108,13 @@ namespace Character.Player
             }).AddTo(gameObject);
         }
 
+        /// <summary>
+        /// ダメージを受けた
+        /// </summary>
+        /// <param name="collisionData">コリジョンデータ</param>
+        public void OnDamaged(CollisionData collisionData)
+        {
+            Debug.Log("TODO:プレイヤーのダメージ実装");
+        }
     }
 }
