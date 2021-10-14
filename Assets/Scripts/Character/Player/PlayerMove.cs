@@ -34,6 +34,11 @@ namespace Character.Player
         private bool bIsFreeze = false;
 
         /// <summary>
+        /// 移動速度
+        /// </summary>
+        private static readonly float moveSpeed = 1.5f;
+
+        /// <summary>
         /// IPlayerControlインタフェースの注入
         /// </summary>
         /// <param name="playerControl">IPlayerControlインタフェース</param>
@@ -70,7 +75,7 @@ namespace Character.Player
                 return;
             }
 
-            rigidBody.velocity = new Vector3(moveVector.x, rigidBody.velocity.y, moveVector.y);
+            rigidBody.velocity = new Vector3(moveVector.x, rigidBody.velocity.y, moveVector.y) * moveSpeed;
             transform.LookAt(transform.position + new Vector3(moveVector.x, 0.0f, moveVector.y));
         }
     }
