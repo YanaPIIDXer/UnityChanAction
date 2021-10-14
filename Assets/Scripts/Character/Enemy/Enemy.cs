@@ -4,6 +4,7 @@ using Character.Enemy.State;
 using Collision;
 using Master;
 using UnityEngine;
+using Zenject;
 
 namespace Character.Enemy
 {
@@ -34,6 +35,7 @@ namespace Character.Enemy
     [RequireComponent(typeof(EnemyMove))]
     [RequireComponent(typeof(EnemyAnimation))]
     [RequireComponent(typeof(EnemyStateControl))]
+    [RequireComponent(typeof(ZenAutoInjecter))]
     public class Enemy : MonoBehaviour, ICharacter, IEnemy
     {
         /// <summary>
@@ -79,6 +81,12 @@ namespace Character.Enemy
         /// 回転
         /// </summary>
         public Quaternion Rotation => transform.rotation;
+
+        /// <summary>
+        /// イベントObserver
+        /// </summary>
+        [Inject]
+        private IEnemyEventObserver eventObserver = null;
 
         void Awake()
         {
