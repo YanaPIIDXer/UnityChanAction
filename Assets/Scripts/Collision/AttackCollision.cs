@@ -67,7 +67,7 @@ namespace Collision
         {
             var hitCharacter = collision.gameObject.GetComponent<ICharacter>();
             if (hitCharacter == null || hitCharacter == owner) { return; }
-            Vector3 blowVector = hitCharacter.Position - owner.Position;
+            Vector3 blowVector = (hitCharacter.Position - owner.Position).normalized;
             hitCharacter.OnDamaged(data, blowVector);
         }
     }
