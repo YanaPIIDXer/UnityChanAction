@@ -78,6 +78,12 @@ namespace Character.Enemy
             {
                 rigidBody.isKinematic = false;
             }
+
+            var colliders = GetComponentsInChildren<Collider>();
+            foreach (var collider in colliders)
+            {
+                collider.isTrigger = false;
+            }
         }
     }
 }

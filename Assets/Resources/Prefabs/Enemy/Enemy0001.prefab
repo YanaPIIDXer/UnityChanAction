@@ -285,9 +285,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8779414036479738111}
-  - component: {fileID: 8974242031348248565}
-  - component: {fileID: 8809322977671296852}
-  - component: {fileID: 2316321288285282758}
+  - component: {fileID: 8958563398761064782}
+  - component: {fileID: 2222842704216014318}
+  - component: {fileID: 8450009311696884493}
   m_Layer: 0
   m_Name: Bip001 R Calf
   m_TagString: Untagged
@@ -311,7 +311,7 @@ Transform:
   m_Father: {fileID: 7855006450440686251}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8974242031348248565
+--- !u!54 &8958563398761064782
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,14 +327,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &8809322977671296852
+--- !u!144 &2222842704216014318
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736167160672071679}
-  m_ConnectedBody: {fileID: 4540018084991625617}
+  m_ConnectedBody: {fileID: 8722327491450181651}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.03854771, y: -0.030749317, z: 0.99878347}
   m_AutoConfigureConnectedAnchor: 1
@@ -372,7 +372,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &2316321288285282758
+--- !u!136 &8450009311696884493
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,9 +487,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9106742005320046615}
-  - component: {fileID: 3434656623686643963}
-  - component: {fileID: 4090950349460089721}
-  - component: {fileID: 8670286392061322064}
+  - component: {fileID: 512172629697654587}
+  - component: {fileID: 7747918970512767705}
+  - component: {fileID: 4250955414297012926}
   m_Layer: 0
   m_Name: Bip001 L UpperArm
   m_TagString: Untagged
@@ -512,7 +512,7 @@ Transform:
   m_Father: {fileID: 6160456109228908617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3434656623686643963
+--- !u!54 &512172629697654587
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,14 +528,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &4090950349460089721
+--- !u!144 &7747918970512767705
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951667803935165181}
-  m_ConnectedBody: {fileID: 2253641309638670711}
+  m_ConnectedBody: {fileID: 4469207560968286837}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.000000018626451, y: 0.25336266, z: 0.03398414}
   m_AutoConfigureConnectedAnchor: 1
@@ -573,7 +573,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &8670286392061322064
+--- !u!136 &4250955414297012926
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -719,9 +719,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 379493444791511382}
-  - component: {fileID: 1209982077757306496}
-  - component: {fileID: 5061565011530230052}
-  - component: {fileID: 4756858267657771922}
+  - component: {fileID: 1775516320175259969}
+  - component: {fileID: 307478836900566360}
+  - component: {fileID: 502588158874479187}
   m_Layer: 0
   m_Name: Bip001 L Thigh
   m_TagString: Untagged
@@ -744,7 +744,7 @@ Transform:
   m_Father: {fileID: 3399129287978492713}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1209982077757306496
+--- !u!54 &1775516320175259969
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -760,14 +760,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &5061565011530230052
+--- !u!144 &307478836900566360
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389990711270125021}
-  m_ConnectedBody: {fileID: 3606431146420639679}
+  m_ConnectedBody: {fileID: 2564809871544297333}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.021389842, y: -0.027538527, z: 0.9993918}
   m_AutoConfigureConnectedAnchor: 1
@@ -805,7 +805,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &4756858267657771922
+--- !u!136 &502588158874479187
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1075,9 +1075,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971673340132220198}
-  - component: {fileID: 658434174000826031}
-  - component: {fileID: 8884699695592574464}
-  - component: {fileID: 6571311525781430707}
+  - component: {fileID: 6930198939359661391}
+  - component: {fileID: 8961172895676485564}
+  - component: {fileID: 4114959670077185117}
   m_Layer: 0
   m_Name: Bip001 Head
   m_TagString: Untagged
@@ -1099,7 +1099,7 @@ Transform:
   m_Father: {fileID: 3176692516864453664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &658434174000826031
+--- !u!54 &6930198939359661391
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1115,14 +1115,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &8884699695592574464
+--- !u!144 &8961172895676485564
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2257939019565870994}
-  m_ConnectedBody: {fileID: 2253641309638670711}
+  m_ConnectedBody: {fileID: 4469207560968286837}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.0000015790151, y: 0.00000179526, z: -1}
   m_AutoConfigureConnectedAnchor: 1
@@ -1160,7 +1160,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!135 &6571311525781430707
+--- !u!135 &4114959670077185117
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1275,9 +1275,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7896451913196507903}
-  - component: {fileID: 4357288547526149081}
-  - component: {fileID: 8211006516695795470}
-  - component: {fileID: 2990699868416926989}
+  - component: {fileID: 349663628553759419}
+  - component: {fileID: 5248976182262644773}
+  - component: {fileID: 6684867571862279538}
   m_Layer: 0
   m_Name: Bip001 R Forearm
   m_TagString: Untagged
@@ -1300,7 +1300,7 @@ Transform:
   m_Father: {fileID: 4156907461476471118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4357288547526149081
+--- !u!54 &349663628553759419
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1316,14 +1316,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &8211006516695795470
+--- !u!144 &5248976182262644773
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2584954625359003753}
-  m_ConnectedBody: {fileID: 904562929076743683}
+  m_ConnectedBody: {fileID: 1575850119540315443}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.000000059604645, y: -0.104170546, z: -0.16868632}
   m_AutoConfigureConnectedAnchor: 1
@@ -1361,7 +1361,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &2990699868416926989
+--- !u!136 &6684867571862279538
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1540,9 +1540,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7855006450440686251}
-  - component: {fileID: 4540018084991625617}
-  - component: {fileID: 5568175189785314589}
-  - component: {fileID: 6803347435897632975}
+  - component: {fileID: 8722327491450181651}
+  - component: {fileID: 1196763695173782698}
+  - component: {fileID: 6066993708515431351}
   m_Layer: 0
   m_Name: Bip001 R Thigh
   m_TagString: Untagged
@@ -1565,7 +1565,7 @@ Transform:
   m_Father: {fileID: 3399129287978492713}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4540018084991625617
+--- !u!54 &8722327491450181651
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1581,14 +1581,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &5568175189785314589
+--- !u!144 &1196763695173782698
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3289475177356168496}
-  m_ConnectedBody: {fileID: 3606431146420639679}
+  m_ConnectedBody: {fileID: 2564809871544297333}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.021995232, y: -0.04413225, z: 0.99878347}
   m_AutoConfigureConnectedAnchor: 1
@@ -1626,7 +1626,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &6803347435897632975
+--- !u!136 &6066993708515431351
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1740,8 +1740,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6471626104280268439}
-  - component: {fileID: 3606431146420639679}
-  - component: {fileID: 1694772481759439414}
+  - component: {fileID: 2564809871544297333}
+  - component: {fileID: 9145649103846233809}
   m_Layer: 0
   m_Name: Bip001 Pelvis
   m_TagString: Untagged
@@ -1766,7 +1766,7 @@ Transform:
   m_Father: {fileID: 7329383796517322660}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3606431146420639679
+--- !u!54 &2564809871544297333
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1782,7 +1782,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1694772481759439414
+--- !u!65 &9145649103846233809
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2161,9 +2161,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6345243979090385158}
-  - component: {fileID: 1027177491400285081}
-  - component: {fileID: 2622288068788744591}
-  - component: {fileID: 7062536519265933377}
+  - component: {fileID: 2411174395183740277}
+  - component: {fileID: 3362085635749094886}
+  - component: {fileID: 545205890599559748}
   m_Layer: 0
   m_Name: Bip001 L Calf
   m_TagString: Untagged
@@ -2187,7 +2187,7 @@ Transform:
   m_Father: {fileID: 379493444791511382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1027177491400285081
+--- !u!54 &2411174395183740277
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2203,14 +2203,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &2622288068788744591
+--- !u!144 &3362085635749094886
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279132457155010336}
-  m_ConnectedBody: {fileID: 1209982077757306496}
+  m_ConnectedBody: {fileID: 1775516320175259969}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.0073997993, y: -0.03407548, z: 0.9993918}
   m_AutoConfigureConnectedAnchor: 1
@@ -2248,7 +2248,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &7062536519265933377
+--- !u!136 &545205890599559748
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2425,9 +2425,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2508467075520745141}
-  - component: {fileID: 2253641309638670711}
-  - component: {fileID: 1650021751490230845}
-  - component: {fileID: 6522636008529590210}
+  - component: {fileID: 4469207560968286837}
+  - component: {fileID: 8085730014502086147}
+  - component: {fileID: 2345787723909821823}
   m_Layer: 0
   m_Name: Bip001 Spine1
   m_TagString: Untagged
@@ -2450,7 +2450,7 @@ Transform:
   m_Father: {fileID: 3399129287978492713}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2253641309638670711
+--- !u!54 &4469207560968286837
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2466,14 +2466,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &1650021751490230845
+--- !u!144 &8085730014502086147
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4899714777710738336}
-  m_ConnectedBody: {fileID: 3606431146420639679}
+  m_ConnectedBody: {fileID: 2564809871544297333}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.0000013197343, y: 0.000001466417, z: -1}
   m_AutoConfigureConnectedAnchor: 1
@@ -2511,7 +2511,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &6522636008529590210
+--- !u!65 &2345787723909821823
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3024,9 +3024,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3902653929610103053}
-  - component: {fileID: 4432510715851254731}
-  - component: {fileID: 6341095938917002024}
-  - component: {fileID: 5475423807409734966}
+  - component: {fileID: 8633689373752701194}
+  - component: {fileID: 610173058707790800}
+  - component: {fileID: 22956130946772763}
   m_Layer: 0
   m_Name: Bip001 R Hand
   m_TagString: Untagged
@@ -3055,7 +3055,7 @@ Transform:
   m_Father: {fileID: 7896451913196507903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4432510715851254731
+--- !u!54 &8633689373752701194
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3071,14 +3071,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &6341095938917002024
+--- !u!144 &610173058707790800
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6229590760378678006}
-  m_ConnectedBody: {fileID: 4357288547526149081}
+  m_ConnectedBody: {fileID: 349663628553759419}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.2578348, y: -0.004294157, z: 0.07529431}
   m_AutoConfigureConnectedAnchor: 1
@@ -3116,7 +3116,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &5475423807409734966
+--- !u!65 &22956130946772763
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3169,9 +3169,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3566045436989461193}
-  - component: {fileID: 566523848487393224}
-  - component: {fileID: 4612686288104468778}
-  - component: {fileID: 893192332847126882}
+  - component: {fileID: 4223810744280810894}
+  - component: {fileID: 1581074289641526520}
+  - component: {fileID: 5779665582336801476}
   m_Layer: 0
   m_Name: Bip001 R Foot
   m_TagString: Untagged
@@ -3194,7 +3194,7 @@ Transform:
   m_Father: {fileID: 8779414036479738111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &566523848487393224
+--- !u!54 &4223810744280810894
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3210,14 +3210,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &4612686288104468778
+--- !u!144 &1581074289641526520
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6380780023579709479}
-  m_ConnectedBody: {fileID: 8974242031348248565}
+  m_ConnectedBody: {fileID: 8958563398761064782}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.000001296401, y: 0.09841266, z: 0.9951457}
   m_AutoConfigureConnectedAnchor: 1
@@ -3255,7 +3255,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &893192332847126882
+--- !u!65 &5779665582336801476
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3338,9 +3338,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746458137435819238}
-  - component: {fileID: 1844411189069109505}
-  - component: {fileID: 3106498572848036108}
-  - component: {fileID: 7298291046652973296}
+  - component: {fileID: 313467010044417645}
+  - component: {fileID: 3944726004885937911}
+  - component: {fileID: 625115575213610763}
   m_Layer: 0
   m_Name: Bip001 L Foot
   m_TagString: Untagged
@@ -3363,7 +3363,7 @@ Transform:
   m_Father: {fileID: 6345243979090385158}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1844411189069109505
+--- !u!54 &313467010044417645
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3379,14 +3379,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &3106498572848036108
+--- !u!144 &3944726004885937911
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6626217135275749654}
-  m_ConnectedBody: {fileID: 1027177491400285081}
+  m_ConnectedBody: {fileID: 2411174395183740277}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.0000016354024, y: -0.09841433, z: 0.9951455}
   m_AutoConfigureConnectedAnchor: 1
@@ -3424,7 +3424,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &7298291046652973296
+--- !u!65 &625115575213610763
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3446,9 +3446,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4156907461476471118}
-  - component: {fileID: 904562929076743683}
-  - component: {fileID: 484478475539678682}
-  - component: {fileID: 3064725657473441755}
+  - component: {fileID: 1575850119540315443}
+  - component: {fileID: 657177647080854866}
+  - component: {fileID: 8210449382783795126}
   m_Layer: 0
   m_Name: Bip001 R UpperArm
   m_TagString: Untagged
@@ -3471,7 +3471,7 @@ Transform:
   m_Father: {fileID: 4318147416180132819}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &904562929076743683
+--- !u!54 &1575850119540315443
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3487,14 +3487,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &484478475539678682
+--- !u!144 &657177647080854866
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6666135030722648473}
-  m_ConnectedBody: {fileID: 2253641309638670711}
+  m_ConnectedBody: {fileID: 4469207560968286837}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.00000008195639, y: -0.08164533, z: -0.18919507}
   m_AutoConfigureConnectedAnchor: 1
@@ -3532,7 +3532,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &3064725657473441755
+--- !u!136 &8210449382783795126
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3555,9 +3555,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579955960694231576}
-  - component: {fileID: 8138523702121705460}
-  - component: {fileID: 756779928926489249}
-  - component: {fileID: 721003339067292172}
+  - component: {fileID: 1326589957735851815}
+  - component: {fileID: 2249097344100231261}
+  - component: {fileID: 1267564185688218851}
   m_Layer: 0
   m_Name: Bip001 L Hand
   m_TagString: Untagged
@@ -3584,7 +3584,7 @@ Transform:
   m_Father: {fileID: 1269172791294442516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8138523702121705460
+--- !u!54 &1326589957735851815
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3600,14 +3600,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &756779928926489249
+--- !u!144 &2249097344100231261
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6708764892117688830}
-  m_ConnectedBody: {fileID: 4947274752147563555}
+  m_ConnectedBody: {fileID: 2014479006019901166}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.02423915, y: -0.039554246, z: 0.07856727}
   m_AutoConfigureConnectedAnchor: 1
@@ -3645,7 +3645,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &721003339067292172
+--- !u!65 &1267564185688218851
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3793,9 +3793,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269172791294442516}
-  - component: {fileID: 4947274752147563555}
-  - component: {fileID: 66697380039047879}
-  - component: {fileID: 7638859637124312449}
+  - component: {fileID: 2014479006019901166}
+  - component: {fileID: 5769346072449458825}
+  - component: {fileID: 4540521381443663371}
   m_Layer: 0
   m_Name: Bip001 L Forearm
   m_TagString: Untagged
@@ -3818,7 +3818,7 @@ Transform:
   m_Father: {fileID: 9106742005320046615}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4947274752147563555
+--- !u!54 &2014479006019901166
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3834,14 +3834,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &66697380039047879
+--- !u!144 &5769346072449458825
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7309989413731066132}
-  m_ConnectedBody: {fileID: 3434656623686643963}
+  m_ConnectedBody: {fileID: 512172629697654587}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.000000007450581, y: 0.32326323, z: 0.029839532}
   m_AutoConfigureConnectedAnchor: 1
@@ -3879,7 +3879,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &7638859637124312449
+--- !u!136 &4540521381443663371
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
