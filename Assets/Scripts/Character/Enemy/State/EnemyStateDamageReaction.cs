@@ -36,7 +36,7 @@ namespace Character.Enemy.State
             ThresholdTime -= Time.deltaTime;
             if (ThresholdTime <= 0.0f && Enemy.Animation.IsNutralState)
             {
-                Enemy.State.SetNextState(new EnemyStateNutral(Enemy));
+                Enemy.State.PopState();
             }
         }
     }

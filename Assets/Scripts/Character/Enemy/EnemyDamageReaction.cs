@@ -65,7 +65,7 @@ namespace Character.Enemy
             }
             else
             {
-                enemyComponents.State.SetNextState(new EnemyStateDamageReaction(enemyComponents));
+                enemyComponents.State.PushState(new EnemyStateDamageReaction(enemyComponents));
             }
         }
 

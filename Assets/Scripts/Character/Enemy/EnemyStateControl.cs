@@ -22,6 +22,11 @@ namespace Character.Enemy
         public bool IsMovable => currentState.IsMovable;
 
         /// <summary>
+        /// PushStateメソッドの呼び出しで退避しているState
+        /// </summary>
+        private EnemyState pushedState = null;
+
+        /// <summary>
         /// 次のステートを設定
         /// </summary>
         /// <param name="nextState">次のステート</param>
@@ -35,6 +40,36 @@ namespace Character.Enemy
             }
             currentState = nextState;
             currentState.Begin();
+        }
+
+        /// <summary>
+        /// ステートのプッシュ
+        /// 現在のステートは一時退避され、
+        /// PopStateメソッドの呼び出しによって戻る
+        /// </summary>
+        /// <param name="nextState"></param>
+        public void PushState(EnemyState nextState)
+        {
+            if (!currentState.IsStateChangeable) { return; }
+
+            if (pushedState == null)
+            {
+                pushedState = currentState;
+            }
+
+            currentState = nextState;
+            currentState.Begin();
+        }
+
+        /// <summary>
+        /// Pushステートで退避しておいたステートに戻す
+        /// </summary>
+        public void PopState()
+        {
+            if (pushedState == null) { return; }
+
+            currentState = pushedState;
+            pushedState = null;
         }
 
         void Awake()
