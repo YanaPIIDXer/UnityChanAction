@@ -50,6 +50,16 @@ namespace Character.Player
     public class Player : MonoBehaviour, ICharacter, IPlayer
     {
         /// <summary>
+        /// HP
+        /// </summary>
+        public int Hp { get; private set; } = 50;
+
+        /// <summary>
+        /// 最大HP
+        /// </summary>
+        public int MaxHp { get; private set; } = 50;
+
+        /// <summary>
         /// 移動Component
         /// </summary>
         public PlayerMove Move { get; private set; }

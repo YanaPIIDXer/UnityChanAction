@@ -51,11 +51,23 @@ namespace Character.Enemy
         public static void Spawn(EnemyData data, Vector3 position)
         {
             // TODO:PrefabManagerみたいなのを作って管理できるようにする
-            GameObject prefab = Resources.Load<GameObject>(PrefabRootPath + data.PrefabName);
+            Enemy prefab = Resources.Load<Enemy>(PrefabRootPath + data.PrefabName);
             Debug.Assert(prefab != null, "EnemyPrefab:" + data.PrefabName + " is Invalid.");
 
-            Instantiate(prefab, position, Quaternion.identity);
+            var enemy = Instantiate<Enemy>(prefab, position, Quaternion.identity);
+            enemy.Hp = data.Hp;
+            enemy.MaxHp = data.Hp;
         }
+
+        /// <summary>
+        /// HP
+        /// </summary>
+        public int Hp { get; private set; }
+
+        /// <summary>
+        /// 最大HP
+        /// </summary>
+        public int MaxHp { get; private set; }
 
         /// <summary>
         /// 移動Component

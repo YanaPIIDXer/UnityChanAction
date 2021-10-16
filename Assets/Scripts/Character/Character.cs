@@ -11,6 +11,17 @@ namespace Character
     public interface ICharacter
     {
         /// <summary>
+        /// HP
+        /// </summary>
+        /// <value></value>
+        int Hp { get; }
+
+        /// <summary>
+        /// 最大HP
+        /// </summary>
+        int MaxHp { get; }
+
+        /// <summary>
         /// 座標
         /// </summary>
         Vector3 Position { get; }
