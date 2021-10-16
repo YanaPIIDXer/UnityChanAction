@@ -35,6 +35,7 @@ namespace Character.Enemy
     [RequireComponent(typeof(EnemyMove))]
     [RequireComponent(typeof(EnemyAnimation))]
     [RequireComponent(typeof(EnemyStateControl))]
+    [RequireComponent(typeof(EnemyDamageReaction))]
     [RequireComponent(typeof(ZenAutoInjecter))]
     public class Enemy : MonoBehaviour, ICharacter, IEnemy
     {
@@ -93,6 +94,11 @@ namespace Character.Enemy
         public EnemyStateControl State { get; private set; }
 
         /// <summary>
+        /// ダメージリアクション
+        /// </summary>
+        private EnemyDamageReaction damageReaction = null;
+
+        /// <summary>
         /// 座標
         /// </summary>
         public Vector3 Position => transform.position;
@@ -113,6 +119,7 @@ namespace Character.Enemy
             Move = GetComponent<EnemyMove>();
             Animation = GetComponent<EnemyAnimation>();
             State = GetComponent<EnemyStateControl>();
+            damageReaction = GetComponent<EnemyDamageReaction>();
         }
 
         /// <summary>
@@ -122,27 +129,8 @@ namespace Character.Enemy
         /// <param name="blowVector">「吹き飛び」の場合の吹き飛びベクトル</param>
         public void OnDamaged(CollisionData collisionData, Vector3 blowVector)
         {
-            switch (collisionData.ReactionType)
-            {
-                case ReactionType.None:
-
-                    Animation.PlayDamageMotion();
-                    break;
-
-                case ReactionType.Blow:
-
-                    Move.AddForce(blowVector * collisionData.ReactionPower);
-                    Animation.PlayBlowMotion();
-                    break;
-
-                case ReactionType.Lift:
-
-                    Move.AddForce(Vector3.up * collisionData.ReactionPower);
-                    Animation.PlayBlowMotion();
-                    break;
-            }
-
-            State.SetNextState(new EnemyStateDamageReaction(this));
+            Hp -= collisionData.Power;
+            damageReaction.OnDamaged(collisionData, blowVector, (Hp > 0));
         }
     }
 }
