@@ -13,9 +13,35 @@ namespace Character.Enemy.State
         /// コンストラクタ
         /// </summary>
         /// <param name="enemy">各Componentを取得するためのインタフェース</param>
-        public EnemyStateDead(IEnemy enemy)
+        /// <param name="enemyObject">エネミーのGameObject</param>
+        public EnemyStateDead(IEnemy enemy, GameObject enemyObject)
             : base(enemy)
         {
+            this.enemyObject = enemyObject;
+        }
+
+        /// <summary>
+        /// 消滅までのタイマー
+        /// </summary>
+        private float removeTimer = 5.0f;
+
+        /// <summary>
+        /// エネミーのGameObject
+        /// </summary>
+        private GameObject enemyObject = null;
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        public override void Update()
+        {
+            if (removeTimer <= 0.0f) { return; }
+
+            removeTimer -= Time.deltaTime;
+            if (removeTimer <= 0.0f)
+            {
+                GameObject.Destroy(enemyObject);
+            }
         }
 
         /// <summary>

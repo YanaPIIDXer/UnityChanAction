@@ -61,7 +61,7 @@ namespace Character.Enemy
             if (bIsDead)
             {
                 ToRagdoll();
-                enemyComponents.State.SetNextState(new EnemyStateDead(enemyComponents));
+                enemyComponents.State.SetNextState(new EnemyStateDead(enemyComponents, gameObject));
             }
             else
             {
