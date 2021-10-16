@@ -8,6 +8,8 @@ namespace Master
 		public string CharacterName { get; private set; }
 		public string PrefabName { get; private set; }
 		public int Hp { get; private set; }
+		public float SearchRadius { get; private set; }
+		public string DefaultAIScriptName { get; private set; }
 
 		public void Serialize(IMemoryStream stream)
 		{
@@ -23,6 +25,12 @@ namespace Master
 			int Hp = new int();
 			stream.Serialize(ref Hp);
 			this.Hp = Hp;
+			float SearchRadius = new float();
+			stream.Serialize(ref SearchRadius);
+			this.SearchRadius = SearchRadius;
+			string DefaultAIScriptName = "";
+			stream.Serialize(ref DefaultAIScriptName);
+			this.DefaultAIScriptName = DefaultAIScriptName;
 		}
 
 		public static EnemyData[] SerializeAll(byte[] buffer)
