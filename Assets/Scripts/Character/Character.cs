@@ -22,6 +22,11 @@ namespace Character
         int MaxHp { get; }
 
         /// <summary>
+        /// 名前
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
         /// 座標
         /// </summary>
         Vector3 Position { get; }

@@ -59,6 +59,7 @@ namespace Character.Enemy
             var enemy = Instantiate<Enemy>(prefab, position, Quaternion.identity);
             enemy.hp = data.Hp;
             enemy.MaxHp = data.Hp;
+            enemy.Name = data.CharacterName;
         }
 
         /// <summary>
@@ -78,6 +79,12 @@ namespace Character.Enemy
         /// 最大HP
         /// </summary>
         public int MaxHp { get; private set; }
+
+        /// <summary>
+        /// 名前
+        /// </summary>
+        /// <value></value>
+        public string Name { get; private set; }
 
         /// <summary>
         /// 移動Component

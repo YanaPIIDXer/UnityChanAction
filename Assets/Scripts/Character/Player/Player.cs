@@ -68,6 +68,11 @@ namespace Character.Player
         public int MaxHp { get; private set; } = 50;
 
         /// <summary>
+        /// 名前
+        /// </summary>
+        public string Name => "ユニティちゃん";
+
+        /// <summary>
         /// 移動Component
         /// </summary>
         public PlayerMove Move { get; private set; }
