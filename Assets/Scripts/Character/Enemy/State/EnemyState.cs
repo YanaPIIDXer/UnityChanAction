@@ -29,6 +29,11 @@ namespace Character.Enemy.State
         public virtual bool IsMovable => true;
 
         /// <summary>
+        /// ステート変更可能か？
+        /// </summary>
+        public virtual bool IsStateChangeable => true;
+
+        /// <summary>
         /// 開始処理
         /// </summary>
         public virtual void Begin() { }

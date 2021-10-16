@@ -5,6 +5,7 @@ using Collision;
 using Master;
 using UnityEngine;
 using Zenject;
+using Cysharp.Threading.Tasks;
 
 namespace Character.Enemy
 {
@@ -129,7 +130,19 @@ namespace Character.Enemy
         /// <param name="blowVector">「吹き飛び」の場合の吹き飛びベクトル</param>
         public void OnDamaged(CollisionData collisionData, Vector3 blowVector)
         {
-            Hp -= collisionData.Power;
+            if (Hp > 0)
+            {
+                Hp -= collisionData.Power;
+                if (Hp == 0)
+                {
+                    UniTask.Run(async () =>
+                    {
+                        await UniTask.Delay(5000);
+                        Destroy(gameObject);
+                    }).Forget();
+                }
+            }
+
             damageReaction.OnDamaged(collisionData, blowVector, (Hp == 0));
         }
     }

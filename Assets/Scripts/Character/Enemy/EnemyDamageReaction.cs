@@ -61,10 +61,12 @@ namespace Character.Enemy
             if (bIsDead)
             {
                 ToRagdoll();
+                enemyComponents.State.SetNextState(new EnemyStateDead(enemyComponents));
             }
-
-            var nextState = new EnemyStateDamageReaction(enemyComponents);
-            enemyComponents.State.SetNextState(nextState);
+            else
+            {
+                enemyComponents.State.SetNextState(new EnemyStateDamageReaction(enemyComponents));
+            }
         }
 
         /// <summary>

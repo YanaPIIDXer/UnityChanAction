@@ -27,6 +27,8 @@ namespace Character.Enemy
         /// <param name="nextState">次のステート</param>
         public void SetNextState(EnemyState nextState)
         {
+            if (currentState != null && !currentState.IsStateChangeable) { return; }
+
             if (currentState != null)
             {
                 currentState.Terminate();
