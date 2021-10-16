@@ -27,7 +27,7 @@ namespace Sequence
         void Start()
         {
             // 試しにエネミーを置いてみる
-            Character.Enemy.Enemy.Spawn(EnemyMaster.Get(1), new Vector3(0.0f, 0.0f, 5.0f));
+            Character.Enemy.Enemy.Spawn(EnemyMaster.Get(1), new Vector3(0.0f, 0.0f, 13.0f));
         }
 
         /// <summary>

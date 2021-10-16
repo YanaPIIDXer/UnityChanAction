@@ -60,6 +60,12 @@ namespace Character.Enemy
             enemy.hp = data.Hp;
             enemy.MaxHp = data.Hp;
             enemy.Name = data.CharacterName;
+
+            var searchObj = new GameObject("SearchSphere");
+            searchObj.AddComponent<SearchSphere>();
+            searchObj.GetComponent<SphereCollider>().radius = data.SearchRadius;
+            searchObj.transform.parent = enemy.transform;
+            searchObj.transform.localPosition = Vector3.zero;
         }
 
         /// <summary>
