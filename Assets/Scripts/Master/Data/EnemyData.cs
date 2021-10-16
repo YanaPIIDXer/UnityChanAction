@@ -7,6 +7,7 @@ namespace Master
 		public int Id { get; private set; }
 		public string CharacterName { get; private set; }
 		public string PrefabName { get; private set; }
+		public int Hp { get; private set; }
 
 		public void Serialize(IMemoryStream stream)
 		{
@@ -19,6 +20,9 @@ namespace Master
 			string PrefabName = "";
 			stream.Serialize(ref PrefabName);
 			this.PrefabName = PrefabName;
+			int Hp = new int();
+			stream.Serialize(ref Hp);
+			this.Hp = Hp;
 		}
 
 		public static EnemyData[] SerializeAll(byte[] buffer)
