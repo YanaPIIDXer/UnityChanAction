@@ -62,8 +62,8 @@ namespace Character.Enemy
             enemy.Name = data.CharacterName;
 
             var searchObj = new GameObject("SearchSphere");
-            searchObj.AddComponent<SearchSphere>();
-            searchObj.GetComponent<SphereCollider>().radius = data.SearchRadius;
+            var searchSphere = searchObj.AddComponent<SearchSphere>();
+            searchSphere.Setup(enemy, data.SearchRadius);
             searchObj.transform.parent = enemy.transform;
             searchObj.transform.localPosition = Vector3.zero;
         }

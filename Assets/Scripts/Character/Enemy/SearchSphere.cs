@@ -11,10 +11,21 @@ namespace Character.Enemy
     [RequireComponent(typeof(SphereCollider))]
     public class SearchSphere : MonoBehaviour
     {
-        void Awake()
+        /// <summary>
+        /// エネミーComponentアクセス用インタフェース
+        /// </summary>
+        private IEnemy enemyComponents = null;
+
+        /// <summary>
+        /// セットアップ
+        /// </summary>
+        /// <param name="enemyComponents">エネミーComponentアクセス用インタフェース</param>
+        /// <param name="radius">半径</param>
+        public void Setup(IEnemy enemyComponents, float radius)
         {
             var collider = GetComponent<SphereCollider>();
             collider.isTrigger = true;
+            collider.radius = radius;
         }
 
         void OnTriggerEnter(Collider collision)
