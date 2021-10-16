@@ -130,7 +130,7 @@ namespace Character.Enemy
         public void OnDamaged(CollisionData collisionData, Vector3 blowVector)
         {
             Hp -= collisionData.Power;
-            damageReaction.OnDamaged(collisionData, blowVector, (Hp > 0));
+            damageReaction.OnDamaged(collisionData, blowVector, (Hp == 0));
         }
     }
 }

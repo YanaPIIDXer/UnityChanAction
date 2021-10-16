@@ -33,23 +33,51 @@ namespace Character.Enemy
             {
                 case ReactionType.None:
 
-                    enemyComponents.Animation.PlayDamageMotion();
+                    if (!bIsDead)
+                    {
+                        enemyComponents.Animation.PlayDamageMotion();
+                    }
                     break;
 
                 case ReactionType.Blow:
 
                     enemyComponents.Move.AddForce(blowVector * collisionData.ReactionPower);
-                    enemyComponents.Animation.PlayBlowMotion();
+                    if (!bIsDead)
+                    {
+                        enemyComponents.Animation.PlayBlowMotion();
+                    }
                     break;
 
                 case ReactionType.Lift:
 
                     enemyComponents.Move.AddForce(Vector3.up * collisionData.ReactionPower);
-                    enemyComponents.Animation.PlayBlowMotion();
+                    if (!bIsDead)
+                    {
+                        enemyComponents.Animation.PlayBlowMotion();
+                    }
                     break;
             }
 
-            enemyComponents.State.SetNextState(new EnemyStateDamageReaction(enemyComponents));
+            if (bIsDead)
+            {
+                ToRagdoll();
+            }
+
+            var nextState = new EnemyStateDamageReaction(enemyComponents);
+            enemyComponents.State.SetNextState(nextState);
+        }
+
+        /// <summary>
+        /// ラグドール化
+        /// </summary>
+        private void ToRagdoll()
+        {
+            GetComponent<Animator>().enabled = false;
+            var rigidBodies = GetComponentsInChildren<Rigidbody>();
+            foreach (var rigidBody in rigidBodies)
+            {
+                rigidBody.isKinematic = false;
+            }
         }
     }
 }
