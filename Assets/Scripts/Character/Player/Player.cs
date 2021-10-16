@@ -52,7 +52,15 @@ namespace Character.Player
         /// <summary>
         /// HP
         /// </summary>
-        public int Hp { get; private set; } = 50;
+        public int Hp
+        {
+            get { return hp; }
+            set
+            {
+                hp = Mathf.Max(value, 0);
+            }
+        }
+        private int hp = 50;
 
         /// <summary>
         /// 最大HP

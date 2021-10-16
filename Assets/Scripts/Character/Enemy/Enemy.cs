@@ -55,14 +55,22 @@ namespace Character.Enemy
             Debug.Assert(prefab != null, "EnemyPrefab:" + data.PrefabName + " is Invalid.");
 
             var enemy = Instantiate<Enemy>(prefab, position, Quaternion.identity);
-            enemy.Hp = data.Hp;
+            enemy.hp = data.Hp;
             enemy.MaxHp = data.Hp;
         }
 
         /// <summary>
         /// HP
         /// </summary>
-        public int Hp { get; private set; }
+        public int Hp
+        {
+            get { return hp; }
+            private set
+            {
+                hp = Mathf.Max(value, 0);
+            }
+        }
+        private int hp = 1;
 
         /// <summary>
         /// 最大HP
