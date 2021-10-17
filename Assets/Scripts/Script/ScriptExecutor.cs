@@ -7,6 +7,12 @@ using MoonSharp.Interpreter;
 namespace Script
 {
     /// <summary>
+    /// yieldするメソッドに付けるAttribute
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Method)]
+    public class YieldAttribute : Attribute { }
+
+    /// <summary>
     /// スクリプト実行クラス
     /// </summary>
     public class ScriptExecutor
