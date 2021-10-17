@@ -94,6 +94,7 @@ namespace Script
                         break;
                     }
                 }
+                source += "\n";
             }
 
             DynValue function = scriptInterpreter.DoString(source);
