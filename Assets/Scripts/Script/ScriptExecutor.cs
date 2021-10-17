@@ -13,9 +13,20 @@ namespace Script
     public class YieldAttribute : Attribute { }
 
     /// <summary>
+    /// スクリプトレジュームインタフェース
+    /// </summary>
+    public interface IScriptResume
+    {
+        /// <summary>
+        /// レジューム
+        /// </summary>
+        void Resume();
+    }
+
+    /// <summary>
     /// スクリプト実行クラス
     /// </summary>
-    public class ScriptExecutor
+    public class ScriptExecutor : IScriptResume
     {
         /// <summary>
         /// スクリプトインタプリタ
@@ -33,6 +44,11 @@ namespace Script
         /// Yieldさせるメソッドリスト
         /// </summary>
         private HashSet<string> yieldMethods = new HashSet<string>();
+
+        /// <summary>
+        /// コルーチン
+        /// </summary>
+        private DynValue coroutine = null;
 
         /// <summary>
         /// オブジェクトを設定
@@ -55,6 +71,44 @@ namespace Script
                 }
             }
             scriptInterpreter.Globals[name] = obj;
+        }
+
+        /// <summary>
+        /// 実行
+        /// </summary>
+        /// <param name="filePath">ファイルパス</param>
+        public void Execute(string filePath)
+        {
+            var textAsset = Resources.Load<TextAsset>(filePath);
+            var sourceLines = textAsset.text.Split('\n');
+            var source = "";
+            foreach (var l in sourceLines)
+            {
+                var line = l.Replace("\t", "").Replace(" ", "");        // コメントアウトの判定が面倒なのでインデントは消す
+                source += line;
+                foreach (var method in yieldMethods)
+                {
+                    if (line.Contains(method) && line.IndexOf("#") != 0 && line.IndexOf("--") != 0)
+                    {
+                        source += "\ncoroutine.yield()";
+                        break;
+                    }
+                }
+            }
+
+            DynValue function = scriptInterpreter.DoString(source);
+            coroutine = scriptInterpreter.CreateCoroutine(function);
+        }
+
+        /// <summary>
+        /// レジューム
+        /// </summary>
+        public void Resume()
+        {
+            if (coroutine.Coroutine.State != CoroutineState.Dead)
+            {
+                coroutine.Coroutine.Resume();
+            }
         }
     }
 }
