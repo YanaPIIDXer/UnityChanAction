@@ -30,6 +30,11 @@ namespace Script
         private HashSet<Type> typeHashSet = new HashSet<Type>();
 
         /// <summary>
+        /// Yieldさせるメソッドリスト
+        /// </summary>
+        private HashSet<string> yieldMethods = new HashSet<string>();
+
+        /// <summary>
         /// オブジェクトを設定
         /// </summary>
         /// <param name="name">オブジェクト名</param>
@@ -40,6 +45,14 @@ namespace Script
             if (typeHashSet.Add(type))
             {
                 UserData.RegisterAssembly(type.Assembly);
+                var methods = type.GetMethods();
+                foreach (var method in methods)
+                {
+                    if (method.GetCustomAttributes(typeof(YieldAttribute), true) != null)
+                    {
+                        yieldMethods.Add(method.Name);
+                    }
+                }
             }
             scriptInterpreter.Globals[name] = obj;
         }
