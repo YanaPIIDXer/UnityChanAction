@@ -95,7 +95,16 @@ namespace Script
                 {
                     if (line.Contains(method) && line.IndexOf("#") != 0 && line.IndexOf("--") != 0)
                     {
-                        source += "\ncoroutine.yield()";
+                        // ログ出力などで文字列にメソッド名が仕込まれるケースを考慮
+                        // 「"」をセパレータにしてSplitし、その結果の配列のインデックスが偶数のものは「ただの文字列」と見做す
+                        var splitedLine = line.Split('"');
+                        for (int i = 0; i < splitedLine.Length; i += 2)
+                        {
+                            if (splitedLine[i].Contains(method))
+                            {
+                                source += "\ncoroutine.yield()";
+                            }
+                        }
                         break;
                     }
                 }
