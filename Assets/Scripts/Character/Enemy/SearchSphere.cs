@@ -33,7 +33,7 @@ namespace Character.Enemy
             var player = collision.gameObject.GetComponent<Player.Player>();
             if (player == null) { return; }
 
-            Debug.Log("Player Searched!");
+            enemyComponents.AI.Execute();
         }
     }
 }

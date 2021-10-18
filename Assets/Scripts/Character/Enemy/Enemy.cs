@@ -66,7 +66,7 @@ namespace Character.Enemy
             enemy.hp = data.Hp;
             enemy.MaxHp = data.Hp;
             enemy.Name = data.CharacterName;
-            enemy.AI.Load(data.DefaultAIScriptName);
+            enemy.GetComponent<EnemyAI>().Load(data.DefaultAIScriptName);
 
             var searchObj = new GameObject("SearchSphere");
             var searchSphere = searchObj.AddComponent<SearchSphere>();
