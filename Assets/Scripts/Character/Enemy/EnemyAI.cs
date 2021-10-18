@@ -21,7 +21,7 @@ namespace Character.Enemy
         /// <summary>
         /// スクリプトが格納されたディレクトリ
         /// </summary>
-        private static readonly string scriptDirectory = "Resources/Scripts/EnemyAI/";
+        private static readonly string scriptDirectory = "Scripts/EnemyAI/";
 
         #region Script Methods
 
