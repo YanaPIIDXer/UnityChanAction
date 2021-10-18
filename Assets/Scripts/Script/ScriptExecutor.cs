@@ -98,14 +98,14 @@ namespace Script
             }
 
             var sourceLines = textAsset.text.Split('\n');
-            var source = "return funciton()";
+            var source = "return function()\n";
             foreach (var l in sourceLines)
             {
                 var line = l.Replace("\t", "").Replace(" ", "");        // コメントアウトの判定が面倒なのでインデントは消す
                 source += line;
                 foreach (var method in yieldMethods)
                 {
-                    if (line.Contains(method) && line.IndexOf("#") != 0 && line.IndexOf("--") != 0)
+                    if (line.IndexOf(method) >= 0 && line.IndexOf("#") != 0 && line.IndexOf("--") != 0)
                     {
                         // ログ出力などで文字列にメソッド名が仕込まれるケースを考慮
                         // 「"」をセパレータにしてSplitし、その結果の配列のインデックスが偶数のものは「ただの文字列」と見做す
@@ -122,7 +122,7 @@ namespace Script
                 }
                 source += "\n";
             }
-            source += "end";
+            source += "end\n";
             function = scriptInterpreter.DoString(source);
         }
 
