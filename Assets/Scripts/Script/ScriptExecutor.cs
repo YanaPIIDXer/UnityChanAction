@@ -46,6 +46,11 @@ namespace Script
         private HashSet<string> yieldMethods = new HashSet<string>();
 
         /// <summary>
+        /// 読み込んだ関数
+        /// </summary>
+        private DynValue function = null;
+
+        /// <summary>
         /// コルーチン
         /// </summary>
         private DynValue coroutine = null;
@@ -77,7 +82,7 @@ namespace Script
         /// 実行
         /// </summary>
         /// <param name="filePath">ファイルパス</param>
-        public void Execute(string filePath)
+        public void Load(string filePath)
         {
             var textAsset = Resources.Load<TextAsset>(filePath);
             var sourceLines = textAsset.text.Split('\n');
@@ -96,8 +101,15 @@ namespace Script
                 }
                 source += "\n";
             }
+            function = scriptInterpreter.DoString(source);
+        }
 
-            DynValue function = scriptInterpreter.DoString(source);
+        /// <summary>
+        /// 実行
+        /// </summary>
+        public void Execute()
+        {
+            if (function == null) { throw new Exception("スクリプトがロードされていません"); }
             coroutine = scriptInterpreter.CreateCoroutine(function);
         }
 
