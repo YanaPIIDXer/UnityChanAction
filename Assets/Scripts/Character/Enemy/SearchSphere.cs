@@ -26,6 +26,7 @@ namespace Character.Enemy
             var collider = GetComponent<SphereCollider>();
             collider.isTrigger = true;
             collider.radius = radius;
+            this.enemyComponents = enemyComponents;
         }
 
         void OnTriggerEnter(Collider collision)
