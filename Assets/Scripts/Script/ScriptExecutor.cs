@@ -20,7 +20,8 @@ namespace Script
         /// <summary>
         /// レジューム
         /// </summary>
-        void Resume();
+        /// <returns>スクリプトが終了したらfalse</returns>
+        bool Resume();
     }
 
     /// <summary>
@@ -125,12 +126,13 @@ namespace Script
         /// <summary>
         /// レジューム
         /// </summary>
-        public void Resume()
+        /// <returns>スクリプトが終了したらfalse</returns>
+        public bool Resume()
         {
-            if (coroutine != null && coroutine.Coroutine.State != CoroutineState.Dead)
-            {
-                coroutine.Coroutine.Resume();
-            }
+            if (coroutine == null) { throw new Exception("coroutineがnullです。"); }
+
+            coroutine.Coroutine.Resume();
+            return (coroutine.Coroutine.State != CoroutineState.Dead);
         }
     }
 }
