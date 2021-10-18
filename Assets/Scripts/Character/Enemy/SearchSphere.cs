@@ -34,6 +34,7 @@ namespace Character.Enemy
             var player = collision.gameObject.GetComponent<Player.Player>();
             if (player == null) { return; }
 
+            enemyComponents.AI.TargetPlayer = player;
             enemyComponents.AI.Execute();
         }
     }

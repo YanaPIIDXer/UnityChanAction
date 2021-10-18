@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Script;
 using MoonSharp.Interpreter;
-using Cysharp.Threading.Tasks;
+using Character.Player;
 
 namespace Character.Enemy
 {
@@ -23,18 +23,40 @@ namespace Character.Enemy
         /// </summary>
         private static readonly string scriptDirectory = "Scripts/EnemyAI/";
 
+        /// <summary>
+        /// ターゲットとなるプレイヤー
+        /// </summary>
+        /// <value></value>
+        public Player.Player TargetPlayer { set; private get; }
+
         #region Script Methods
 
         /// <summary>
-        /// ログ出力＆Yieldテスト
+        /// 近づく
         /// </summary>
-        /// <param name="message">メッセージ</param>
         [Yield]
-        public async void LogTest(string message)
+        public void Approach()
         {
-            Debug.Log(message);
-            await UniTask.Delay(1500);
-            Resume();
+            Debug.Log("Approach()");
+        }
+
+        /// <summary>
+        /// 逃げる
+        /// </summary>
+        [Yield]
+        public void RunAway()
+        {
+            Debug.Log("RunAway()");
+        }
+
+        /// <summary>
+        /// ＡＩの切り替え
+        /// </summary>
+        /// <param name="nextAIScriptName">切り替えるＡＩのスクリプトファイル名</param>
+        public void SwitchAI(string nextAIScriptName)
+        {
+            script.Load(scriptDirectory + nextAIScriptName);
+            script.Execute();
         }
 
         #endregion

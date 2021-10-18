@@ -1,3 +1,4 @@
-AI.LogTest("Test1")
-AI.LogTest("Test2")
-AI.LogTest("Test3")
+AI.Approach()
+if (AI.Hp / AI.MaxHp) <= 0.3 then
+    AI.SwithAI("Enemy0001_1")
+end
