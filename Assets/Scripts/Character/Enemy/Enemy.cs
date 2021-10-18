@@ -66,7 +66,7 @@ namespace Character.Enemy
             enemy.hp = data.Hp;
             enemy.MaxHp = data.Hp;
             enemy.Name = data.CharacterName;
-            enemy.GetComponent<EnemyAI>().Load(data.DefaultAIScriptName);
+            enemy.data = data;
 
             var searchObj = new GameObject("SearchSphere");
             var searchSphere = searchObj.AddComponent<SearchSphere>();
@@ -98,6 +98,11 @@ namespace Character.Enemy
         /// </summary>
         /// <value></value>
         public string Name { get; private set; }
+
+        /// <summary>
+        /// エネミーデータ
+        /// </summary>
+        private EnemyData data = null;
 
         /// <summary>
         /// 移動Component
@@ -146,6 +151,12 @@ namespace Character.Enemy
             Animation = GetComponent<EnemyAnimation>();
             State = GetComponent<EnemyStateControl>();
             damageReaction = GetComponent<EnemyDamageReaction>();
+            AI = GetComponent<EnemyAI>();
+        }
+
+        void Start()
+        {
+            AI.Load(data.DefaultAIScriptName);
         }
 
         /// <summary>
