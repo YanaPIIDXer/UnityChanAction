@@ -28,6 +28,11 @@ namespace Character.Enemy
         /// ステート制御
         /// </summary>
         EnemyStateControl State { get; }
+
+        /// <summary>
+        /// AI
+        /// </summary>
+        EnemyAI AI { get; }
     }
 
     /// <summary>
@@ -37,6 +42,7 @@ namespace Character.Enemy
     [RequireComponent(typeof(EnemyAnimation))]
     [RequireComponent(typeof(EnemyStateControl))]
     [RequireComponent(typeof(EnemyDamageReaction))]
+    [RequireComponent(typeof(EnemyAI))]
     [RequireComponent(typeof(ZenAutoInjecter))]
     public class Enemy : MonoBehaviour, ICharacter, IEnemy
     {
@@ -60,6 +66,7 @@ namespace Character.Enemy
             enemy.hp = data.Hp;
             enemy.MaxHp = data.Hp;
             enemy.Name = data.CharacterName;
+            enemy.AI.Load(data.DefaultAIScriptName);
 
             var searchObj = new GameObject("SearchSphere");
             var searchSphere = searchObj.AddComponent<SearchSphere>();
@@ -106,6 +113,11 @@ namespace Character.Enemy
         /// ステート制御
         /// </summary>
         public EnemyStateControl State { get; private set; }
+
+        /// <summary>
+        /// AI
+        /// </summary>
+        public EnemyAI AI { get; private set; }
 
         /// <summary>
         /// ダメージリアクション

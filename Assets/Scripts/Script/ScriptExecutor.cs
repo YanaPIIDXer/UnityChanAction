@@ -86,6 +86,12 @@ namespace Script
         public void Load(string filePath)
         {
             var textAsset = Resources.Load<TextAsset>(filePath);
+            if (textAsset != null)
+            {
+                Debug.LogError(filePath + "is invalid.");
+                return;
+            }
+
             var sourceLines = textAsset.text.Split('\n');
             var source = "";
             foreach (var l in sourceLines)
