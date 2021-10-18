@@ -43,5 +43,14 @@ namespace Character.Enemy
         {
             script.Execute();
         }
+
+        void Update()
+        {
+            if (script.IsFinished)
+            {
+                // 終了したら最初からやり直す
+                script.Execute();
+            }
+        }
     }
 }

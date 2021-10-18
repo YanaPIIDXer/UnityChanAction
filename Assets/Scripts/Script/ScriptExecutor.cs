@@ -59,7 +59,7 @@ namespace Script
         /// 終了しているか？
         /// </summary>
         /// <returns></returns>
-        public bool IsFinished => (coroutine.Coroutine.State == CoroutineState.Dead);
+        public bool IsFinished => (coroutine != null && coroutine.Coroutine.State == CoroutineState.Dead);
 
         /// <summary>
         /// オブジェクトを設定
