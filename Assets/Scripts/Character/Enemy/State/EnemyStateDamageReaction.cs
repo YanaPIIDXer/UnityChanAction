@@ -24,6 +24,11 @@ namespace Character.Enemy.State
         public override bool IsMovable => false;
 
         /// <summary>
+        /// ステート変更可能か？
+        /// </summary>
+        public override bool IsStateChangeable => false;
+
+        /// <summary>
         /// ステート再生時間閾値（最低滞在時間）
         /// </summary>
         private float ThresholdTime = 0.5f;
