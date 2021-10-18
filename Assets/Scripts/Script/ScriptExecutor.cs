@@ -20,8 +20,7 @@ namespace Script
         /// <summary>
         /// レジューム
         /// </summary>
-        /// <returns>スクリプトが終了したらfalse</returns>
-        bool Resume();
+        void Resume();
     }
 
     /// <summary>
@@ -55,6 +54,12 @@ namespace Script
         /// コルーチン
         /// </summary>
         private DynValue coroutine = null;
+
+        /// <summary>
+        /// 終了しているか？
+        /// </summary>
+        /// <returns></returns>
+        public bool IsFinished => (coroutine.Coroutine.State == CoroutineState.Dead);
 
         /// <summary>
         /// オブジェクトを設定
@@ -133,12 +138,13 @@ namespace Script
         /// レジューム
         /// </summary>
         /// <returns>スクリプトが終了したらfalse</returns>
-        public bool Resume()
+        public void Resume()
         {
             if (coroutine == null) { throw new Exception("coroutineがnullです。"); }
-
-            coroutine.Coroutine.Resume();
-            return (coroutine.Coroutine.State != CoroutineState.Dead);
+            if (!IsFinished)
+            {
+                coroutine.Coroutine.Resume();
+            }
         }
     }
 }
