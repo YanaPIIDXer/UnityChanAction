@@ -30,6 +30,11 @@ namespace Character.Enemy
         EnemyStateControl State { get; }
 
         /// <summary>
+        /// Transform
+        /// </summary>
+        Transform Transform { get; }
+
+        /// <summary>
         /// AI
         /// </summary>
         EnemyAI AI { get; }
@@ -123,6 +128,11 @@ namespace Character.Enemy
         /// AI
         /// </summary>
         public EnemyAI AI { get; private set; }
+
+        /// <summary>
+        /// Transform
+        /// </summary>
+        public Transform Transform => transform;
 
         /// <summary>
         /// ダメージリアクション

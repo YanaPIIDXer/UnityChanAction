@@ -99,13 +99,13 @@ namespace Script
 
             var sourceLines = textAsset.text.Split('\n');
             var source = "return function()\n";
-            foreach (var l in sourceLines)
+            foreach (var line in sourceLines)
             {
-                var line = l.Replace("\t", "").Replace(" ", "");        // コメントアウトの判定が面倒なのでインデントは消す
                 source += line;
                 foreach (var method in yieldMethods)
                 {
-                    if (line.IndexOf(method) >= 0 && line.IndexOf("#") != 0 && line.IndexOf("--") != 0)
+                    var methodIndex = line.IndexOf(method);
+                    if (methodIndex >= 0 && line.IndexOf("#") < methodIndex && line.IndexOf("--") < methodIndex)
                     {
                         // ログ出力などで文字列にメソッド名が仕込まれるケースを考慮
                         // 「"」をセパレータにしてSplitし、その結果の配列のインデックスが偶数のものは「ただの文字列」と見做す

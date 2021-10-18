@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Script;
 using MoonSharp.Interpreter;
-using Character.Player;
+using Character.Enemy.State;
 
 namespace Character.Enemy
 {
@@ -29,6 +29,16 @@ namespace Character.Enemy
         /// <value></value>
         public Player.Player TargetPlayer { set; private get; }
 
+        /// <summary>
+        /// 所有者
+        /// </summary>
+        private ICharacter owner = null;
+
+        /// <summary>
+        /// ステート制御
+        /// </summary>
+        private EnemyStateControl stateControl = null;
+
         #region Script Methods
 
         /// <summary>
@@ -37,7 +47,7 @@ namespace Character.Enemy
         [Yield]
         public void Approach()
         {
-            Debug.Log("Approach()");
+            stateControl.SetNextState(new EnemyStateApproach(GetComponent<IEnemy>(), TargetPlayer));
         }
 
         /// <summary>
@@ -47,6 +57,15 @@ namespace Character.Enemy
         public void RunAway()
         {
             Debug.Log("RunAway()");
+        }
+
+        /// <summary>
+        /// ＨＰの残りの割合を取得
+        /// </summary>
+        /// <returns>ＨＰの残りの割合</returns>
+        public float GetHpRatio()
+        {
+            return (float)owner.Hp / owner.MaxHp;
         }
 
         /// <summary>
@@ -88,6 +107,8 @@ namespace Character.Enemy
 
         void Awake()
         {
+            owner = GetComponent<Enemy>();
+            stateControl = GetComponent<EnemyStateControl>();
             script.SetObject("AI", this);
         }
 
