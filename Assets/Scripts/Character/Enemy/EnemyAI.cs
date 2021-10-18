@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Script;
 using MoonSharp.Interpreter;
+using Cysharp.Threading.Tasks;
 
 namespace Character.Enemy
 {
@@ -22,10 +23,21 @@ namespace Character.Enemy
         /// </summary>
         private static readonly string scriptDirectory = "Resources/Scripts/EnemyAI/";
 
-        void Awake()
+        #region Script Methods
+
+        /// <summary>
+        /// ログ出力＆Yieldテスト
+        /// </summary>
+        /// <param name="message">メッセージ</param>
+        [Yield]
+        public async void LogTest(string message)
         {
-            script.SetObject("AI", this);
+            Debug.Log(message);
+            await UniTask.Delay(1500);
+            Resume();
         }
+
+        #endregion
 
         /// <summary>
         /// スクリプトの読み込み
@@ -42,6 +54,19 @@ namespace Character.Enemy
         public void Execute()
         {
             script.Execute();
+        }
+
+        /// <summary>
+        /// レジューム
+        /// </summary>
+        public void Resume()
+        {
+            script.Resume();
+        }
+
+        void Awake()
+        {
+            script.SetObject("AI", this);
         }
 
         void Update()
