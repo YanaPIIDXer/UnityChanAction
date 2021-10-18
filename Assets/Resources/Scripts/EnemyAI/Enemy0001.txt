@@ -1,0 +1,3 @@
+AI.Log("Test1")
+AI.Log("Test2")
+AI.Log("Test3")
