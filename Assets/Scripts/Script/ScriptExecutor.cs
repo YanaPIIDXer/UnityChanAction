@@ -133,6 +133,7 @@ namespace Script
         {
             if (function == null) { throw new Exception("スクリプトがロードされていません"); }
             coroutine = scriptInterpreter.CreateCoroutine(function);
+            coroutine.Coroutine.Resume();
         }
 
         /// <summary>
