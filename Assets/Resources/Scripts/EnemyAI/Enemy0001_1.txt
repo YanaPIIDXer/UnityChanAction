@@ -1,1 +1,1 @@
-RunAway()
+AI.RunAway()
