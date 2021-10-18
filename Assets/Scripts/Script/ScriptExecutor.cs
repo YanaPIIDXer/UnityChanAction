@@ -98,7 +98,7 @@ namespace Script
             }
 
             var sourceLines = textAsset.text.Split('\n');
-            var source = "";
+            var source = "return funciton()";
             foreach (var l in sourceLines)
             {
                 var line = l.Replace("\t", "").Replace(" ", "");        // コメントアウトの判定が面倒なのでインデントは消す
@@ -122,6 +122,7 @@ namespace Script
                 }
                 source += "\n";
             }
+            source += "end";
             function = scriptInterpreter.DoString(source);
         }
 
