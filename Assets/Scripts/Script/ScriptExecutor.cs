@@ -106,7 +106,7 @@ namespace Script
         /// </summary>
         public void Resume()
         {
-            if (coroutine.Coroutine.State != CoroutineState.Dead)
+            if (coroutine != null && coroutine.Coroutine.State != CoroutineState.Dead)
             {
                 coroutine.Coroutine.Resume();
             }
