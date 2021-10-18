@@ -39,6 +39,11 @@ namespace Character.Enemy
         /// </summary>
         private EnemyStateControl stateControl = null;
 
+        /// <summary>
+        /// エネミーの他Componentへの参照インタフェース
+        /// </summary>
+        private IEnemy enemyComponents = null;
+
         #region Script Methods
 
         /// <summary>
@@ -47,7 +52,7 @@ namespace Character.Enemy
         [Yield]
         public void Approach()
         {
-            stateControl.SetNextState(new EnemyStateApproach(GetComponent<IEnemy>(), TargetPlayer));
+            stateControl.SetNextState(new EnemyStateApproach(enemyComponents, TargetPlayer));
         }
 
         /// <summary>
@@ -56,7 +61,7 @@ namespace Character.Enemy
         [Yield]
         public void RunAway()
         {
-            Debug.Log("RunAway()");
+            stateControl.SetNextState(new EnemyStateRunAway(enemyComponents, TargetPlayer));
         }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace Character.Enemy
         void Awake()
         {
             owner = GetComponent<Enemy>();
+            enemyComponents = GetComponent<IEnemy>();
             stateControl = GetComponent<EnemyStateControl>();
             script.SetObject("AI", this);
         }
