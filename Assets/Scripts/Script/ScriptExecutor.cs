@@ -75,7 +75,7 @@ namespace Script
                 var methods = type.GetMethods();
                 foreach (var method in methods)
                 {
-                    if (method.GetCustomAttributes(typeof(YieldAttribute), true) != null)
+                    if (method.GetCustomAttributes(typeof(YieldAttribute), true).Length > 0)
                     {
                         yieldMethods.Add(method.Name);
                     }
