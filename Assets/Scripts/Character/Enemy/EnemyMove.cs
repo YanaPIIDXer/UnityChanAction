@@ -31,6 +31,11 @@ namespace Character.Enemy
         private EnemyStateControl stateControl = null;
 
         /// <summary>
+        /// 移動速度
+        /// </summary>
+        private static readonly float moveSpeed = 1.5f;
+
+        /// <summary>
         /// 力を加える
         /// </summary>
         /// <param name="force">加える力</param>
@@ -55,7 +60,7 @@ namespace Character.Enemy
 
             if (!stateControl.IsMovable) { return; }
 
-            rigidBody.velocity = new Vector3(MoveVector.x, rigidBody.velocity.y, MoveVector.y);
+            rigidBody.velocity = new Vector3(MoveVector.x, rigidBody.velocity.y, MoveVector.y) * moveSpeed;
             transform.LookAt(transform.position + new Vector3(MoveVector.x, 0.0f, MoveVector.y));
         }
     }
